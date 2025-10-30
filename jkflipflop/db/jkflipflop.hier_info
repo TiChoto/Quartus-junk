@@ -1,0 +1,16 @@
+|jk_flipflop_tb
+
+
+|jk_flipflop_tb|jk_flipflop:dut
+clk => Q_n~reg0.CLK
+clk => Q~reg0.CLK
+clear_n => Q.IN0
+clear_n => Q_n~reg0.PRESET
+clear_n => Q~reg0.ACLR
+preset_n => Q.IN1
+J => Mux0.IN3
+K => Mux0.IN4
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q_n <= Q_n~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

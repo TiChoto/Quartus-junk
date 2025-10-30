@@ -1,0 +1,45 @@
+# Reading pref.tcl
+# do bce_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/BCE {C:/Users/admin/Desktop/Quartus/BCE/BCE.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:57:55 on Jun 06,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/BCE" C:/Users/admin/Desktop/Quartus/BCE/BCE.v 
+# -- Compiling module BCE
+# 
+# Top level modules:
+# 	BCE
+# End time: 15:57:55 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/BCE {C:/Users/admin/Desktop/Quartus/BCE/BCE_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:57:55 on Jun 06,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/BCE" C:/Users/admin/Desktop/Quartus/BCE/BCE_tb.v 
+# -- Compiling module BCE_tb
+# 
+# Top level modules:
+# 	BCE_tb
+# End time: 15:57:55 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.BCE_tb
+# vsim work.BCE_tb 
+# Start time: 15:57:58 on Jun 06,2025
+# Loading work.BCE_tb
+# Loading work.BCE
+add wave -position insertpoint sim:/BCE_tb/*
+run
+# ** Note: $stop    : C:/Users/admin/Desktop/Quartus/BCE/BCE_tb.v(16)
+#    Time: 60 ns  Iteration: 0  Instance: /BCE_tb
+# Break in Module BCE_tb at C:/Users/admin/Desktop/Quartus/BCE/BCE_tb.v line 16
+# End time: 15:59:11 on Jun 06,2025, Elapsed time: 0:01:13
+# Errors: 0, Warnings: 0

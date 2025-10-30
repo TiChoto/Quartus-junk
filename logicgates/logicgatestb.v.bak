@@ -1,0 +1,17 @@
+module logicgatestb;
+    reg a, b;
+    wire y_nand, y_nor, y_xnor;
+
+    nand_gate nand_inst (.a(a), .b(b), .y(y_nand));
+    nor_gate nor_inst (.a(a), .b(b), .y(y_nor));
+    xnor_gate xnor_inst (.a(a), .b(b), .y(y_xnor));
+
+   
+    initial begin
+        a = 0; b = 0; #10;
+        a = 0; b = 1; #10;
+        a = 1; b = 0; #10;
+        a = 1; b = 1; #10;
+        $stop; //Testing all inputs, for modelsim
+    end
+endmodule

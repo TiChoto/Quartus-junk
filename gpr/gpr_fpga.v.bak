@@ -1,0 +1,65 @@
+module gpr_fpga (
+    input clk,                 // Use CLOCK_50_B5B (50MHz)
+    input reset_n,             // Use CPU_RESET_n
+    input [3:0] key,           // Use KEY[3:0] for control
+    input [9:0] sw,            // Use SW[9:0] for data/address input
+    output [7:0] ledg,         // Use LEDG[7:0] for status
+    output [9:0] ledr          // Use LEDR[9:0] for output display
+);
+
+    // State machine for serial data input
+    reg [1:0] state;
+    reg [4:0] addr_reg;
+    reg [31:0] data_reg;
+    reg [31:0] regfile [0:31];
+    
+    // Initialize all registers to 0
+    integer i;
+    initial begin
+        for (i = 0; i < 32; i = i + 1)
+            regfile[i] = 32'b0;
+    end
+    
+    // Main state machine
+    always @(posedge clk or negedge reset_n) begin
+        if (!reset_n) begin
+            state <= 2'b00;
+            addr_reg <= 5'b0;
+            data_reg <= 32'b0;
+        end
+        else begin
+            case (state)
+                2'b00: begin // Wait for write command (KEY[0])
+                    if (!key[0]) begin
+                        addr_reg <= sw[4:0]; // Get address from SW[4:0]
+                        state <= 2'b01;
+                    end
+                end
+                2'b01: begin // Get data bits 15:0 from SW
+                    data_reg[15:0] <= sw;
+                    state <= 2'b10;
+                end
+                2'b10: begin // Get data bits 31:16 from SW
+                    data_reg[31:16] <= sw;
+                    state <= 2'b11;
+                end
+                2'b11: begin // Write to register
+                    if (addr_reg != 5'b0) // Don't write to reg0
+                        regfile[addr_reg] <= data_reg;
+                    state <= 2'b00;
+                end
+            endcase
+        end
+    end
+    
+    // Read operation - display selected register on LEDs
+    reg [31:0] display_reg;
+    always @(posedge clk) begin
+        if (!key[1]) // Read command (KEY[1])
+            display_reg <= regfile[sw[4:0]];
+    end
+    
+    // Assign outputs
+    assign ledr = display_reg[9:0]; // Lower 10 bits on LEDR
+    assign ledg = {state, display_reg[13:10]}; // Status + some bits on LEDG
+endmodule

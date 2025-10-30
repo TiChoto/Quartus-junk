@@ -1,0 +1,118 @@
+# Reading pref.tcl
+# do mipsi_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Mips\ processor {C:/Users/admin/Desktop/Quartus/Mips processor/top_mips.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:56:45 on Jul 01,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/Mips processor" C:/Users/admin/Desktop/Quartus/Mips processor/top_mips.v 
+# -- Compiling module top_mips
+# 
+# Top level modules:
+# 	top_mips
+# End time: 10:56:45 on Jul 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Mips\ processor {C:/Users/admin/Desktop/Quartus/Mips processor/testbench.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:56:45 on Jul 01,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/Mips processor" C:/Users/admin/Desktop/Quartus/Mips processor/testbench.v 
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# End time: 10:56:45 on Jul 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Mips\ processor {C:/Users/admin/Desktop/Quartus/Mips processor/InstructionDecoder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:56:46 on Jul 01,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/Mips processor" C:/Users/admin/Desktop/Quartus/Mips processor/InstructionDecoder.v 
+# -- Compiling module InstructionDecoder
+# 
+# Top level modules:
+# 	InstructionDecoder
+# End time: 10:56:46 on Jul 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Mips\ processor {C:/Users/admin/Desktop/Quartus/Mips processor/ALU.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:56:46 on Jul 01,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/Mips processor" C:/Users/admin/Desktop/Quartus/Mips processor/ALU.v 
+# -- Compiling module ALU
+# 
+# Top level modules:
+# 	ALU
+# End time: 10:56:46 on Jul 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Mips\ processor {C:/Users/admin/Desktop/Quartus/Mips processor/gpr.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:56:46 on Jul 01,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/Mips processor" C:/Users/admin/Desktop/Quartus/Mips processor/gpr.v 
+# -- Compiling module gpr
+# 
+# Top level modules:
+# 	gpr
+# End time: 10:56:46 on Jul 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Mips\ processor {C:/Users/admin/Desktop/Quartus/Mips processor/IE.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:56:47 on Jul 01,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/Mips processor" C:/Users/admin/Desktop/Quartus/Mips processor/IE.v 
+# -- Compiling module IE
+# 
+# Top level modules:
+# 	IE
+# End time: 10:56:47 on Jul 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Mips\ processor {C:/Users/admin/Desktop/Quartus/Mips processor/Shifter.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:56:47 on Jul 01,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/Mips processor" C:/Users/admin/Desktop/Quartus/Mips processor/Shifter.v 
+# -- Compiling module Shifter
+# 
+# Top level modules:
+# 	Shifter
+# End time: 10:56:47 on Jul 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Mips\ processor {C:/Users/admin/Desktop/Quartus/Mips processor/MEMORY.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:56:47 on Jul 01,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/Mips processor" C:/Users/admin/Desktop/Quartus/Mips processor/MEMORY.v 
+# -- Compiling module MEMORY
+# 
+# Top level modules:
+# 	MEMORY
+# End time: 10:56:47 on Jul 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.testbench
+# vsim work.testbench 
+# Start time: 10:57:10 on Jul 01,2025
+# Loading work.testbench
+# Loading work.top_mips
+# Loading work.MEMORY
+# Loading work.InstructionDecoder
+# Loading work.gpr
+# Loading work.IE
+# Loading work.ALU
+# Loading work.Shifter
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'MemWrite'. The port definition is at: C:/Users/admin/Desktop/Quartus/Mips processor/MEMORY.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/instr_mem File: C:/Users/admin/Desktop/Quartus/Mips processor/top_mips.v Line: 20
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'MemRead'. The port definition is at: C:/Users/admin/Desktop/Quartus/Mips processor/MEMORY.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/instr_mem File: C:/Users/admin/Desktop/Quartus/Mips processor/top_mips.v Line: 20
+add wave -position insertpoint sim:/testbench/*
+run
+# ==== MIPS Processor Simulation Start ====
+# ==== Simulation Finished ====
+# ** Note: $finish    : C:/Users/admin/Desktop/Quartus/Mips processor/testbench.v(75)
+#    Time: 660 ns  Iteration: 0  Instance: /testbench
+# 1
+# Break in Module testbench at C:/Users/admin/Desktop/Quartus/Mips processor/testbench.v line 75
+# End time: 11:00:34 on Jul 01,2025, Elapsed time: 0:03:24
+# Errors: 0, Warnings: 2

@@ -1,0 +1,45 @@
+# Reading pref.tcl
+# do shifter_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Shifter {C:/Users/admin/Desktop/Quartus/Shifter/Shifter.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:02:46 on Jun 06,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/Shifter" C:/Users/admin/Desktop/Quartus/Shifter/Shifter.v 
+# -- Compiling module Shifter
+# 
+# Top level modules:
+# 	Shifter
+# End time: 16:02:46 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Shifter {C:/Users/admin/Desktop/Quartus/Shifter/Shifter_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:02:47 on Jun 06,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/Shifter" C:/Users/admin/Desktop/Quartus/Shifter/Shifter_tb.v 
+# -- Compiling module Shifter_tb
+# 
+# Top level modules:
+# 	Shifter_tb
+# End time: 16:02:47 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.Shifter_tb
+# vsim work.Shifter_tb 
+# Start time: 16:02:49 on Jun 06,2025
+# Loading work.Shifter_tb
+# Loading work.Shifter
+add wave -position insertpoint sim:/Shifter_tb/*
+run
+# ** Note: $stop    : C:/Users/admin/Desktop/Quartus/Shifter/Shifter_tb.v(29)
+#    Time: 60 ns  Iteration: 0  Instance: /Shifter_tb
+# Break in Module Shifter_tb at C:/Users/admin/Desktop/Quartus/Shifter/Shifter_tb.v line 29
+# End time: 16:03:23 on Jun 06,2025, Elapsed time: 0:00:34
+# Errors: 0, Warnings: 0

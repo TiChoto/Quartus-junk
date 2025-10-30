@@ -1,0 +1,61 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/admin/Desktop/Quartus/aluop/simulation/modelsim
+vALU
+!s110 1746689938
+!i10b 1
+!s100 OI0fM<<<AWAb551j5=>b<1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IeAbVVLlYdZKNDIFH:@m<g2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1746689469
+8C:/Users/admin/Desktop/Quartus/aluop/ALU.v
+FC:/Users/admin/Desktop/Quartus/aluop/ALU.v
+!i122 0
+L0 1 57
+Z3 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1746689938.000000
+!s107 C:/Users/admin/Desktop/Quartus/aluop/ALU.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/aluop|C:/Users/admin/Desktop/Quartus/aluop/ALU.v|
+!i113 1
+Z4 o-vlog01compat -work work
+Z5 !s92 -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/aluop
+Z6 tCvgOpt 0
+n@a@l@u
+vALU_TB
+!s110 1746689939
+!i10b 1
+!s100 I=;z[zk`1fISal?lVz?Q93
+R1
+IKgjjiW;?Bd<kehWe6<4Z;1
+R2
+R0
+w1746689912
+8C:/Users/admin/Desktop/Quartus/aluop/ALU_TB.v
+FC:/Users/admin/Desktop/Quartus/aluop/ALU_TB.v
+!i122 1
+L0 2 46
+R3
+r1
+!s85 0
+31
+!s108 1746689939.000000
+!s107 C:/Users/admin/Desktop/Quartus/aluop/ALU_TB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/aluop|C:/Users/admin/Desktop/Quartus/aluop/ALU_TB.v|
+!i113 1
+R4
+R5
+R6
+n@a@l@u_@t@b

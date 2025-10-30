@@ -1,0 +1,33 @@
+`timescale 1ns/1ps
+module muxdff_tb();
+
+reg clk, sel, data0, data1;
+wire Q;
+
+mux_dff dut (
+    .clk(clk),
+    .sel(sel),
+    .data0(data0),
+    .data1(data1),
+    .Q(Q)
+);
+
+initial begin
+    clk = 0;
+    repeat (20) #5 clk = ~clk;
+end
+
+initial begin
+    sel = 0; data0 = 0; data1 = 1;
+    #15 sel = 1;
+    #30 sel = 0;
+    #20;
+    $finish;
+end
+
+initial begin
+    $dumpfile("muxdff_waves.vcd");
+    $dumpvars(0, muxdff_tb);
+end
+
+endmodule

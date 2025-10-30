@@ -1,0 +1,45 @@
+# Reading pref.tcl
+# do alu_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/alu {C:/Users/admin/Desktop/Quartus/alu/alubranch.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:57:47 on Apr 22,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/alu" C:/Users/admin/Desktop/Quartus/alu/alubranch.v 
+# -- Compiling module alubranch
+# 
+# Top level modules:
+# 	alubranch
+# End time: 16:57:47 on Apr 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/alu {C:/Users/admin/Desktop/Quartus/alu/alubranch_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:57:47 on Apr 22,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/alu" C:/Users/admin/Desktop/Quartus/alu/alubranch_tb.v 
+# -- Compiling module alubranch_tb
+# 
+# Top level modules:
+# 	alubranch_tb
+# End time: 16:57:47 on Apr 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.alubranch_tb
+# vsim work.alubranch_tb 
+# Start time: 16:57:51 on Apr 22,2025
+# Loading work.alubranch_tb
+# Loading work.alubranch
+add wave -position insertpoint sim:/alubranch_tb/*
+run
+# ** Note: $stop    : C:/Users/admin/Desktop/Quartus/alu/alubranch_tb.v(30)
+#    Time: 140 ns  Iteration: 0  Instance: /alubranch_tb
+# Break in Module alubranch_tb at C:/Users/admin/Desktop/Quartus/alu/alubranch_tb.v line 30
+# End time: 16:58:23 on Apr 22,2025, Elapsed time: 0:00:32
+# Errors: 0, Warnings: 0

@@ -1,0 +1,20 @@
+module reg4bit (
+    input clk,         
+    input we,           
+    input [2:0] addr,   // 3-bit address (uses lower 2 bits for 4 registers)
+    input [3:0] wdata,  // 4-bit write data
+    output [3:0] rdata  // 4-bit read data
+);
+
+reg [3:0] registers [0:3]; // 4 registers, each 4 bits
+
+//synch write 
+always @(posedge clk) begin
+    if (we)
+        registers[addr[1:0]] <= wdata; //low 2 bits of address
+end
+
+//asynch read
+assign rdata = registers[addr[1:0]];
+
+endmodule

@@ -1,0 +1,21 @@
+module program_counter (
+    input logic clk,
+    input logic reset_n,
+    output logic [3:0] pc_out
+);
+
+logic [3:0] pc_next;
+
+incrementer inc0 (
+    .pc_in(pc_out),
+    .pc_out(pc_next)
+);
+
+always_ff @(posedge clk or negedge reset_n) begin
+    if (!reset_n)
+        pc_out <= 4'b0000;
+    else
+        pc_out <= pc_next;
+end
+
+endmodule

@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/admin/Desktop/Quartus/gpr/simulation/modelsim
+vgpr
+Z1 !s110 1745671919
+!i10b 1
+!s100 IYn9ZT6Xo6BizML6Q6H`_1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IYk;90kR?_Y5U8PhX3oKNf0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1745671626
+8C:/Users/admin/Desktop/Quartus/gpr/gpr.v
+FC:/Users/admin/Desktop/Quartus/gpr/gpr.v
+!i122 0
+L0 1 41
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1745671918.000000
+!s107 C:/Users/admin/Desktop/Quartus/gpr/gpr.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/gpr|C:/Users/admin/Desktop/Quartus/gpr/gpr.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/gpr
+Z7 tCvgOpt 0
+vgpr_tb
+R1
+!i10b 1
+!s100 [N^zL[jfTzA9nn9KKQ5:30
+R2
+IDNZ<hhhfcl:JOfo2iXS1@0
+R3
+R0
+w1745671787
+8C:/Users/admin/Desktop/Quartus/gpr/gpr_tb.v
+FC:/Users/admin/Desktop/Quartus/gpr/gpr_tb.v
+!i122 1
+L0 2 61
+R4
+r1
+!s85 0
+31
+!s108 1745671919.000000
+!s107 C:/Users/admin/Desktop/Quartus/gpr/gpr_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/gpr|C:/Users/admin/Desktop/Quartus/gpr/gpr_tb.v|
+!i113 1
+R5
+R6
+R7

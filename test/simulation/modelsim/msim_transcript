@@ -1,0 +1,79 @@
+# Reading pref.tcl
+# do test_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus {C:/Users/admin/Desktop/Quartus/test.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:06:15 on Mar 18,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus" C:/Users/admin/Desktop/Quartus/test.v 
+# -- Compiling module test
+# 
+# Top level modules:
+# 	test
+# End time: 12:06:15 on Mar 18,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus {C:/Users/admin/Desktop/Quartus/and_gate.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:06:16 on Mar 18,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus" C:/Users/admin/Desktop/Quartus/and_gate.v 
+# -- Compiling module and_gate
+# 
+# Top level modules:
+# 	and_gate
+# End time: 12:06:16 on Mar 18,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus {C:/Users/admin/Desktop/Quartus/or_gate.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:06:16 on Mar 18,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus" C:/Users/admin/Desktop/Quartus/or_gate.v 
+# -- Compiling module or_gate
+# 
+# Top level modules:
+# 	or_gate
+# End time: 12:06:16 on Mar 18,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus {C:/Users/admin/Desktop/Quartus/xor_gate.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:06:16 on Mar 18,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus" C:/Users/admin/Desktop/Quartus/xor_gate.v 
+# -- Compiling module xor_gate
+# 
+# Top level modules:
+# 	xor_gate
+# End time: 12:06:16 on Mar 18,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.test
+# vsim work.test 
+# Start time: 12:06:24 on Mar 18,2025
+# Loading work.test
+# Loading work.and_gate
+# Loading work.or_gate
+# Loading work.xor_gate
+add wave -position insertpoint  \
+sim:/test/a \
+sim:/test/b \
+sim:/test/y_and \
+sim:/test/y_or \
+sim:/test/y_xor
+run 200ns
+# Starting simulation...
+# a=0, b=0, y_and=0, y_or=0, y_xor=0
+# a=0, b=1, y_and=0, y_or=1, y_xor=1
+# a=1, b=0, y_and=0, y_or=1, y_xor=1
+# a=1, b=1, y_and=1, y_or=1, y_xor=0
+# Simulation complete.
+# ** Note: $finish    : C:/Users/admin/Desktop/Quartus/test.v(47)
+#    Time: 40 ns  Iteration: 0  Instance: /test
+# 1
+# Break in Module test at C:/Users/admin/Desktop/Quartus/test.v line 47
+# End time: 12:11:06 on Mar 18,2025, Elapsed time: 0:04:42
+# Errors: 0, Warnings: 0

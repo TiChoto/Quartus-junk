@@ -1,0 +1,46 @@
+# Reading pref.tcl
+# do 4bitcounter_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/4bitcounter {C:/Users/admin/Desktop/Quartus/4bitcounter/counter_4bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:46:40 on Apr 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/4bitcounter" C:/Users/admin/Desktop/Quartus/4bitcounter/counter_4bit.v 
+# -- Compiling module counter_4bit
+# 
+# Top level modules:
+# 	counter_4bit
+# End time: 23:46:40 on Apr 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/4bitcounter {C:/Users/admin/Desktop/Quartus/4bitcounter/counter_4bit_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:46:40 on Apr 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/4bitcounter" C:/Users/admin/Desktop/Quartus/4bitcounter/counter_4bit_tb.v 
+# -- Compiling module counter_4bit_tb
+# 
+# Top level modules:
+# 	counter_4bit_tb
+# End time: 23:46:40 on Apr 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.counter_4bit_tb
+# vsim work.counter_4bit_tb 
+# Start time: 23:46:52 on Apr 04,2025
+# Loading work.counter_4bit_tb
+# Loading work.counter_4bit
+add wave -position insertpoint sim:/counter_4bit_tb/*
+run
+# ** Note: $finish    : C:/Users/admin/Desktop/Quartus/4bitcounter/counter_4bit_tb.v(18)
+#    Time: 200 ns  Iteration: 0  Instance: /counter_4bit_tb
+# 1
+# Break in Module counter_4bit_tb at C:/Users/admin/Desktop/Quartus/4bitcounter/counter_4bit_tb.v line 18
+# End time: 23:48:01 on Apr 04,2025, Elapsed time: 0:01:09
+# Errors: 0, Warnings: 0

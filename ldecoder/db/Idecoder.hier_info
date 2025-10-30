@@ -1,0 +1,46 @@
+|tb_instruction_decoder
+
+
+|tb_instruction_decoder|instruction_decoder:inst
+instruction[0] => Decoder0.IN6
+instruction[1] => Decoder0.IN5
+instruction[2] => Decoder0.IN4
+instruction[3] => Decoder0.IN3
+instruction[4] => Decoder0.IN2
+instruction[5] => Decoder0.IN1
+instruction[6] => Decoder0.IN0
+instruction[7] => ~NO_FANOUT~
+instruction[8] => ~NO_FANOUT~
+instruction[9] => ~NO_FANOUT~
+instruction[10] => ~NO_FANOUT~
+instruction[11] => ~NO_FANOUT~
+instruction[12] => ~NO_FANOUT~
+instruction[13] => ~NO_FANOUT~
+instruction[14] => ~NO_FANOUT~
+instruction[15] => ~NO_FANOUT~
+instruction[16] => ~NO_FANOUT~
+instruction[17] => ~NO_FANOUT~
+instruction[18] => ~NO_FANOUT~
+instruction[19] => ~NO_FANOUT~
+instruction[20] => ~NO_FANOUT~
+instruction[21] => ~NO_FANOUT~
+instruction[22] => ~NO_FANOUT~
+instruction[23] => ~NO_FANOUT~
+instruction[24] => ~NO_FANOUT~
+instruction[25] => ~NO_FANOUT~
+instruction[26] => ~NO_FANOUT~
+instruction[27] => ~NO_FANOUT~
+instruction[28] => ~NO_FANOUT~
+instruction[29] => ~NO_FANOUT~
+instruction[30] => ~NO_FANOUT~
+instruction[31] => ~NO_FANOUT~
+alu_op[0] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+alu_op[1] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+alu_op[2] <= alu_op.DB_MAX_OUTPUT_PORT_TYPE
+alu_op[3] <= <GND>
+reg_write <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+mem_read <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+mem_write <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+branch <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+

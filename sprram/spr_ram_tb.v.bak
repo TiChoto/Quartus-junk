@@ -1,0 +1,88 @@
+`timescale 1ns/1ps
+module spr_ram_tb;
+reg clk;
+reg Sw;
+reg [4:0] Sa;
+reg [31:0] Sce;
+reg [31:0][31:0] Sdin;
+reg [31:0] Sin;
+wire [31:0] Sout;
+
+
+spr_ram inst (
+    .clk(clk),
+    .Sw(Sw),
+    .Sa(Sa),
+    .Sce(Sce),
+    .Sdin(Sdin),
+    .Sin(Sin),
+    .Sout(Sout)
+);
+
+
+initial begin
+    clk = 0;
+    forever #5 clk = ~clk;  
+end
+
+initial begin
+    Sw = 0;
+    Sa = 0;
+    Sce = 32'h00000000;
+    Sin = 32'h00000000;
+    Sdin = {32{32'h00000000}};
+    #10;
+    
+    //reg5 using Sdin
+    Sce = 32'h00000020;  
+    Sdin[5] = 32'hA5A5A5A5;
+    Sw = 1;
+    #10; 
+    Sw = 0;
+    Sa = 5;
+    #5;
+    
+    //reg10 using Sin 
+    Sce = 32'h00000000;  //clear Sce
+    Sin = 32'hDEADBEEF;
+    Sw = 1;
+    #10;  
+    Sw = 0;
+    Sa = 10;
+    #5;
+    
+    Sa = 7;
+    #5;
+    
+    //multiple regs
+    Sce = 32'h00001020;//Sce[5] and Sce[12]
+    Sdin[5] = 32'h11111111;
+    Sdin[12] = 32'h22222222;
+    Sin = 32'h33333333;
+    Sw = 1;
+    #10;
+    Sw = 0;
+    
+    Sa = 5;
+    #5;
+    
+    //reg12 from Sdin
+    Sa = 12;
+    #5;
+    
+    //reg8 from Sin
+    Sa = 8;
+    #5;
+    
+    Sce = 32'hFFFFFFFF;  
+    Sdin[0] = 32'h55555555;
+    Sin = 32'hAAAAAAAA;
+    Sw = 0;  
+    #10; 
+    
+    Sa = 0;
+    #5;
+    $finish;
+end
+
+endmodule

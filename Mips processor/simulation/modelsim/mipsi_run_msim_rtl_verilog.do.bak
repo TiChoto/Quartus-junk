@@ -1,0 +1,16 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Mips\ Processor {C:/Users/admin/Desktop/Quartus/Mips Processor/MEMORY.v}
+vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Mips\ Processor {C:/Users/admin/Desktop/Quartus/Mips Processor/top_mips.v}
+vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Mips\ Processor {C:/Users/admin/Desktop/Quartus/Mips Processor/testbench.v}
+vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Mips\ Processor {C:/Users/admin/Desktop/Quartus/Mips Processor/InstructionDecoder.v}
+vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Mips\ Processor {C:/Users/admin/Desktop/Quartus/Mips Processor/ALU.v}
+vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Mips\ Processor {C:/Users/admin/Desktop/Quartus/Mips Processor/gpr.v}
+vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Mips\ Processor {C:/Users/admin/Desktop/Quartus/Mips Processor/IE.v}
+vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Mips\ Processor {C:/Users/admin/Desktop/Quartus/Mips Processor/Shifter.v}
+

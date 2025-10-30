@@ -1,0 +1,83 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/admin/Desktop/Quartus/dffdifferent/simulation/modelsim
+vdff_behavioral
+Z1 !s110 1743794937
+!i10b 1
+!s100 n5UJXVgf>_VnI:JW5]6LW0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Ib^ZBGFgWUER9Shd22X_W20
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1743794534
+8C:/Users/admin/Desktop/Quartus/dffdifferent/dff_behavioral.v
+FC:/Users/admin/Desktop/Quartus/dffdifferent/dff_behavioral.v
+!i122 2
+L0 1 18
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1743794937.000000
+!s107 C:/Users/admin/Desktop/Quartus/dffdifferent/dff_behavioral.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/dffdifferent|C:/Users/admin/Desktop/Quartus/dffdifferent/dff_behavioral.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/dffdifferent
+Z8 tCvgOpt 0
+vdff_structural
+R1
+!i10b 1
+!s100 `c_[6518de;gbB:9hW=H30
+R2
+IbB6@BHOIP73E<J3RB<58P1
+R3
+R0
+w1743794739
+8C:/Users/admin/Desktop/Quartus/dffdifferent/dff_structural.v
+FC:/Users/admin/Desktop/Quartus/dffdifferent/dff_structural.v
+!i122 1
+L0 1 32
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/admin/Desktop/Quartus/dffdifferent/dff_structural.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/dffdifferent|C:/Users/admin/Desktop/Quartus/dffdifferent/dff_structural.v|
+!i113 1
+R6
+R7
+R8
+vdff_tb
+R1
+!i10b 1
+!s100 cTJJl5Lki2SFhDk9FbL1V0
+R2
+I?[R6IGnobo<G[RH@6>cC:1
+R3
+R0
+w1743794932
+8C:/Users/admin/Desktop/Quartus/dffdifferent/dff_tb.v
+FC:/Users/admin/Desktop/Quartus/dffdifferent/dff_tb.v
+!i122 0
+L0 2 49
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/admin/Desktop/Quartus/dffdifferent/dff_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/dffdifferent|C:/Users/admin/Desktop/Quartus/dffdifferent/dff_tb.v|
+!i113 1
+R6
+R7
+R8

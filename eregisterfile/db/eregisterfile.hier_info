@@ -1,0 +1,65 @@
+|eregister_tb
+
+
+|eregister_tb|eregisterfile:inst
+clk => registers.we_a.CLK
+clk => registers.waddr_a[2].CLK
+clk => registers.waddr_a[1].CLK
+clk => registers.waddr_a[0].CLK
+clk => registers.data_a[7].CLK
+clk => registers.data_a[6].CLK
+clk => registers.data_a[5].CLK
+clk => registers.data_a[4].CLK
+clk => registers.data_a[3].CLK
+clk => registers.data_a[2].CLK
+clk => registers.data_a[1].CLK
+clk => registers.data_a[0].CLK
+clk => registers.CLK0
+we => registers.we_a.DATAIN
+we => registers.WE
+ra1[0] => registers.RADDR
+ra1[1] => registers.RADDR1
+ra1[2] => registers.RADDR2
+ra2[0] => registers.PORTBRADDR
+ra2[1] => registers.PORTBRADDR1
+ra2[2] => registers.PORTBRADDR2
+wa[0] => registers.waddr_a[0].DATAIN
+wa[0] => registers.WADDR
+wa[1] => registers.waddr_a[1].DATAIN
+wa[1] => registers.WADDR1
+wa[2] => registers.waddr_a[2].DATAIN
+wa[2] => registers.WADDR2
+wd[0] => registers.data_a[0].DATAIN
+wd[0] => registers.DATAIN
+wd[1] => registers.data_a[1].DATAIN
+wd[1] => registers.DATAIN1
+wd[2] => registers.data_a[2].DATAIN
+wd[2] => registers.DATAIN2
+wd[3] => registers.data_a[3].DATAIN
+wd[3] => registers.DATAIN3
+wd[4] => registers.data_a[4].DATAIN
+wd[4] => registers.DATAIN4
+wd[5] => registers.data_a[5].DATAIN
+wd[5] => registers.DATAIN5
+wd[6] => registers.data_a[6].DATAIN
+wd[6] => registers.DATAIN6
+wd[7] => registers.data_a[7].DATAIN
+wd[7] => registers.DATAIN7
+rd1[0] <= registers.DATAOUT
+rd1[1] <= registers.DATAOUT1
+rd1[2] <= registers.DATAOUT2
+rd1[3] <= registers.DATAOUT3
+rd1[4] <= registers.DATAOUT4
+rd1[5] <= registers.DATAOUT5
+rd1[6] <= registers.DATAOUT6
+rd1[7] <= registers.DATAOUT7
+rd2[0] <= registers.PORTBDATAOUT
+rd2[1] <= registers.PORTBDATAOUT1
+rd2[2] <= registers.PORTBDATAOUT2
+rd2[3] <= registers.PORTBDATAOUT3
+rd2[4] <= registers.PORTBDATAOUT4
+rd2[5] <= registers.PORTBDATAOUT5
+rd2[6] <= registers.PORTBDATAOUT6
+rd2[7] <= registers.PORTBDATAOUT7
+
+

@@ -1,0 +1,69 @@
+# Reading pref.tcl
+# do logicgates_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/logicgates {C:/Users/admin/Desktop/Quartus/logicgates/logicgatestb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:40:42 on Mar 29,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/logicgates" C:/Users/admin/Desktop/Quartus/logicgates/logicgatestb.v 
+# -- Compiling module logicgatestb
+# 
+# Top level modules:
+# 	logicgatestb
+# End time: 12:40:42 on Mar 29,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/logicgates/output_files {C:/Users/admin/Desktop/Quartus/logicgates/output_files/nand_gate.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:40:42 on Mar 29,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/logicgates/output_files" C:/Users/admin/Desktop/Quartus/logicgates/output_files/nand_gate.v 
+# -- Compiling module nand_gate
+# 
+# Top level modules:
+# 	nand_gate
+# End time: 12:40:42 on Mar 29,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/logicgates/output_files {C:/Users/admin/Desktop/Quartus/logicgates/output_files/nor_gate.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:40:42 on Mar 29,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/logicgates/output_files" C:/Users/admin/Desktop/Quartus/logicgates/output_files/nor_gate.v 
+# -- Compiling module nor_gate
+# 
+# Top level modules:
+# 	nor_gate
+# End time: 12:40:43 on Mar 29,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/logicgates/output_files {C:/Users/admin/Desktop/Quartus/logicgates/output_files/xnor_gate.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:40:43 on Mar 29,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/logicgates/output_files" C:/Users/admin/Desktop/Quartus/logicgates/output_files/xnor_gate.v 
+# -- Compiling module xnor_gate
+# 
+# Top level modules:
+# 	xnor_gate
+# End time: 12:40:43 on Mar 29,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.logicgatestb
+# vsim work.logicgatestb 
+# Start time: 12:40:51 on Mar 29,2025
+# Loading work.logicgatestb
+# Loading work.nand_gate
+# Loading work.nor_gate
+# Loading work.xnor_gate
+add wave -position insertpoint sim:/logicgatestb/nand_inst/*
+add wave -position insertpoint sim:/logicgatestb/nor_inst/*
+add wave -position insertpoint sim:/logicgatestb/xnor_inst/*
+run
+# ** Note: $stop    : C:/Users/admin/Desktop/Quartus/logicgates/logicgatestb.v(12)
+#    Time: 40 ps  Iteration: 0  Instance: /logicgatestb
+# Break in Module logicgatestb at C:/Users/admin/Desktop/Quartus/logicgates/logicgatestb.v line 12
+# End time: 12:42:18 on Mar 29,2025, Elapsed time: 0:01:27
+# Errors: 0, Warnings: 0

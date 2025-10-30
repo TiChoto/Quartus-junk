@@ -1,0 +1,107 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/admin/Desktop/Quartus/simulation/modelsim
+vand_gate
+Z1 !s110 1742285176
+!i10b 1
+!s100 GXjN3dMVAbgeR8?3ZLzdL1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IRL4^@A?5F1iB21Qa:[8203
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1742282379
+8C:/Users/admin/Desktop/Quartus/and_gate.v
+FC:/Users/admin/Desktop/Quartus/and_gate.v
+!i122 1
+Z4 L0 1 7
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1742285176.000000
+!s107 C:/Users/admin/Desktop/Quartus/and_gate.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus|C:/Users/admin/Desktop/Quartus/and_gate.v|
+!i113 1
+Z7 o-vlog01compat -work work
+Z8 !s92 -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus
+Z9 tCvgOpt 0
+vor_gate
+R1
+!i10b 1
+!s100 gHUR8]bYPm5@e6l5;AheI0
+R2
+IJc0oIHPC0F<=8?:kfYP5B2
+R3
+R0
+w1742282387
+8C:/Users/admin/Desktop/Quartus/or_gate.v
+FC:/Users/admin/Desktop/Quartus/or_gate.v
+!i122 2
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/admin/Desktop/Quartus/or_gate.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus|C:/Users/admin/Desktop/Quartus/or_gate.v|
+!i113 1
+R7
+R8
+R9
+vtest
+!s110 1742285175
+!i10b 1
+!s100 ^DM7dIJbUR?KO7_;PFKf30
+R2
+Ih^YP5I1oEgR3cl`=<TM7j3
+R3
+R0
+w1742285167
+8C:/Users/admin/Desktop/Quartus/test.v
+FC:/Users/admin/Desktop/Quartus/test.v
+!i122 0
+L0 2 51
+R5
+r1
+!s85 0
+31
+!s108 1742285175.000000
+!s107 C:/Users/admin/Desktop/Quartus/test.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus|C:/Users/admin/Desktop/Quartus/test.v|
+!i113 1
+R7
+R8
+R9
+vxor_gate
+R1
+!i10b 1
+!s100 fHJh3^A4XAL@@;T>nS[ZK1
+R2
+IbJmbW_A`bGGz=fT89z^^h0
+R3
+R0
+w1742282392
+8C:/Users/admin/Desktop/Quartus/xor_gate.v
+FC:/Users/admin/Desktop/Quartus/xor_gate.v
+!i122 3
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/admin/Desktop/Quartus/xor_gate.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus|C:/Users/admin/Desktop/Quartus/xor_gate.v|
+!i113 1
+R7
+R8
+R9

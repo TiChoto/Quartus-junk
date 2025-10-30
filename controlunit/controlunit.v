@@ -1,0 +1,47 @@
+module controlunit(
+    input [5:0] opcode,         
+    output reg [1:0] ALUop,     
+    output reg RegDst,         
+    output reg Br,         
+    output reg ALUsrc,         
+    output reg ZeroCheck      
+);
+
+parameter rt = 6'b000000;
+parameter BEQ     = 6'b000100;
+parameter BNE     = 6'b000101;
+
+always @(*) begin
+    case (opcode)
+        rt: begin
+            ALUop = 2'b10;
+            RegDst = 1'b1;
+            Br = 1'b0;
+            ALUsrc = 1'b0;
+            ZeroCheck = 1'b0;
+        end
+        BEQ: begin
+            ALUop = 2'b01;
+            RegDst = 1'b0; //dont care 
+            Br = 1'b1;
+            ALUsrc = 1'b0;
+            ZeroCheck = 1'b1;
+        end
+        BNE: begin
+            ALUop = 2'b01;
+            RegDst = 1'b0; //dont care again 
+            Br = 1'b1;
+            ALUsrc = 1'b0;
+            ZeroCheck = 1'b1;
+        end
+        default: begin
+            ALUop = 2'b00;
+            RegDst = 1'b0;
+            Br = 1'b0;
+            ALUsrc = 1'b0;
+            ZeroCheck = 1'b0;
+        end
+    endcase
+end
+
+endmodule

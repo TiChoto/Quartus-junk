@@ -1,0 +1,234 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/admin/Desktop/Quartus/simulation/modelsim
+vALU
+Z1 !s110 1751446293
+!i10b 1
+!s100 Bg;3oGEINL1WhT@@VVa4=1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IG282[[G]8kg[=LA]?j_MA2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1751441240
+Z5 8C:/Users/admin/Desktop/Quartus/top_mips.v
+Z6 FC:/Users/admin/Desktop/Quartus/top_mips.v
+!i122 0
+L0 329 26
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1751446292.000000
+Z9 !s107 C:/Users/admin/Desktop/Quartus/top_mips.v|
+Z10 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus|C:/Users/admin/Desktop/Quartus/top_mips.v|
+!i113 1
+Z11 o-vlog01compat -work work
+Z12 !s92 -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus
+Z13 tCvgOpt 0
+n@a@l@u
+vBCE
+R1
+!i10b 1
+!s100 NQezgb54X4k9;UQ2;f6SJ1
+R2
+IFPJbg^=SkC_R:KNP@=n;:0
+R3
+R0
+R4
+R5
+R6
+!i122 0
+L0 389 26
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@b@c@e
+vGP_Registers
+R1
+!i10b 1
+!s100 QOBD_aV49WV>Q0C1g2BU_1
+R2
+IzH8E]o2_Sak`80AM2]UXK0
+R3
+R0
+R4
+R5
+R6
+!i122 0
+L0 300 27
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@g@p_@registers
+vImmediate_Extension
+R1
+!i10b 1
+!s100 P`[Lz:bVXA=WgoS9akfVo3
+R2
+IT^bg?QeiST=^YS=4Dm<JF0
+R3
+R0
+R4
+R5
+R6
+!i122 0
+L0 377 10
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@immediate_@extension
+vInstruction_Decoder
+R1
+!i10b 1
+!s100 Ebb4RI:B0Ie93bHNMiY[F1
+R2
+ITb`4QkD@R=jTV79fe6mA71
+R3
+R0
+R4
+R5
+R6
+!i122 0
+L0 417 118
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@instruction_@decoder
+vMemory_Module
+R1
+!i10b 1
+!s100 PPK2=325Y5GDc8]845z`g3
+R2
+I;^>N<HL_JZAWn5jkWJ0XK1
+R3
+R0
+R4
+R5
+R6
+!i122 0
+L0 231 67
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@memory_@module
+vShifter
+R1
+!i10b 1
+!s100 PO3OMeIF26_3`QK67F`AC1
+R2
+IPh7eBg6c<8WoZH3jfRZ8f2
+R3
+R0
+R4
+R5
+R6
+!i122 0
+L0 357 18
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13
+n@shifter
+vtestbench
+R1
+!i10b 1
+!s100 <3SC_nY1S87R6i9POnP5>1
+R2
+IR7VdGFOYUIVmD?^0[NMVQ1
+R3
+R0
+w1751441407
+8C:/Users/admin/Desktop/Quartus/testbench.v
+FC:/Users/admin/Desktop/Quartus/testbench.v
+!i122 1
+L0 2 67
+R7
+r1
+!s85 0
+31
+!s108 1751446293.000000
+!s107 C:/Users/admin/Desktop/Quartus/testbench.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus|C:/Users/admin/Desktop/Quartus/testbench.v|
+!i113 1
+R11
+R12
+R13
+vtop_mips
+R1
+!i10b 1
+!s100 >=U^?W8a>CdabhGH5660I1
+R2
+IdB82naRiB]1P_DD^hz9e:3
+R3
+R0
+R4
+R5
+R6
+!i122 0
+L0 1 223
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13

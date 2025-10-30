@@ -1,0 +1,7 @@
+
+State Machine - |baseline_c5gx|top_mips:uut|reg_display_sel
+Name reg_display_sel.00 reg_display_sel.10 reg_display_sel.01 reg_display_sel.11 
+reg_display_sel.11 0 0 0 0 
+reg_display_sel.01 0 0 1 1 
+reg_display_sel.10 0 1 0 1 
+reg_display_sel.00 1 0 0 1 

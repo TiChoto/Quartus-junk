@@ -1,0 +1,534 @@
+module top_mips (
+    input wire clk,
+    input wire reset,
+    output wire [31:0] aluresout,
+    output wire [31:0] shift_resultout,
+    output wire [31:0] GP_DATA_INout
+);
+
+    // =====================================================================
+    // Internal Signals
+    // =====================================================================
+    
+    // Program Counter signals
+    reg [31:0] PC;
+    wire [31:0] PC_plus_4;
+    reg [31:0] next_PC;
+    wire [1:0] PC_MUX_SEL;
+    
+    // Instruction and immediate signals
+    wire [31:0] instruction;
+    wire [31:0] immediate_extended;
+    wire [15:0] immediate;
+    wire [25:0] jump_index;
+    
+    // Register addresses
+    wire [4:0] RS, RT, RD;
+    wire [4:0] CAD;
+    wire [4:0] shamt;
+    
+    // Register file signals
+    wire [31:0] portA_data, portB_data;
+    reg [31:0] GP_data_in;
+    wire GP_WE;
+    wire [1:0] GP_MUX_SEL;
+    
+    // ALU signals
+    wire [31:0] ALU_result;
+    wire [31:0] ALU_operand_B;
+    wire [3:0] ALU_function;
+    wire ALU_OP_MUX_SEL;
+    wire [2:0] af;
+    
+    // Shifter signals
+    wire [31:0] shift_result;
+    wire [1:0] shift_function;
+    
+    // Memory signals
+    wire [31:0] memory_data_out;
+    wire memory_WE;
+    wire E; // Memory enable output
+    
+    // Branch control signals
+    wire branch_taken;
+    wire [31:0] branch_target;
+    wire [31:0] jump_target;
+    
+    // Delayed signals for GP register (1 clock cycle delay)
+    reg E_delayed;
+    reg GP_WE_delayed;
+    reg [4:0] CAD_delayed;
+    reg [31:0] data_in_delayed;
+    
+    // =====================================================================
+    // Signal Extraction from Instruction
+    // =====================================================================
+    assign RS = instruction[25:21];
+    assign RT = instruction[20:16];
+    assign RD = instruction[15:11];
+    assign immediate = instruction[15:0];
+    assign jump_index = instruction[25:0];
+    assign shamt = instruction[10:6];
+    
+    // =====================================================================
+    // PC Logic and Next PC Calculation
+    // =====================================================================
+    assign PC_plus_4 = PC + 32'd4;
+    
+    // Branch target calculation
+    assign branch_target = PC_plus_4 + (immediate_extended << 2);
+    
+    // Jump target calculation
+    assign jump_target = {PC_plus_4[31:28], jump_index, 2'b00};
+    
+    // PC Multiplexer (4-to-1)
+    always @(*) begin
+        case (PC_MUX_SEL)
+            2'b00: next_PC = PC_plus_4;              // Normal increment
+            2'b01: next_PC = branch_taken ? branch_target : PC_plus_4; // Branch
+            2'b10: next_PC = jump_target;             // Jump (J, JAL)
+            2'b11: next_PC = portA_data;              // Jump Register (JR, JALR)
+            default: next_PC = PC_plus_4;
+        endcase
+    end
+    
+    // PC Register
+    always @(posedge clk or posedge reset) begin
+        if (reset)
+            PC <= 32'h00000000;
+        else
+            PC <= next_PC;
+    end
+    
+    // =====================================================================
+    // Signal Delay Logic (1 clock cycle delay for GP signals)
+    // =====================================================================
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            E_delayed <= 1'b0;
+            GP_WE_delayed <= 1'b0;
+            CAD_delayed <= 5'b0;
+            data_in_delayed <= 32'b0;
+        end else begin
+            E_delayed <= E;
+            GP_WE_delayed <= GP_WE;
+            CAD_delayed <= CAD;
+            data_in_delayed <= GP_data_in;
+        end
+    end
+    
+    // =====================================================================
+    // ALU Input Multiplexer
+    // =====================================================================
+    assign ALU_operand_B = ALU_OP_MUX_SEL ? immediate_extended : portB_data;
+    
+    // =====================================================================
+    // GP Data Input Multiplexer (4-to-1)
+    // =====================================================================
+    always @(*) begin
+        case (GP_MUX_SEL)
+            2'b00: GP_data_in = ALU_result;          // ALU result
+            2'b01: GP_data_in = memory_data_out;     // Memory data
+            2'b10: GP_data_in = shift_result;        // Shift result
+            2'b11: GP_data_in = PC_plus_4;           // Next PC (for JAL, JALR)
+            default: GP_data_in = ALU_result;
+        endcase
+    end
+    
+    // =====================================================================
+    // Module Instantiations
+    // =====================================================================
+    
+    // Memory Module
+    Memory_Module memory_inst (
+        .clk(clk),
+        .reset(reset),
+        .address(ALU_result),
+        .write_data(portB_data),
+        .WE(memory_WE),
+        .instruction_address(PC),
+        .instruction(instruction),
+        .data_out(memory_data_out),
+        .E(E)
+    );
+    
+    // Instruction Decoder
+    Instruction_Decoder decoder_inst (
+        .instruction(instruction),
+        .PC_MUX_SEL(PC_MUX_SEL),
+        .GP_MUX_SEL(GP_MUX_SEL),
+        .ALU_OP_MUX_SEL(ALU_OP_MUX_SEL),
+        .ALU_function(ALU_function),
+        .shift_function(shift_function),
+        .GP_WE(GP_WE),
+        .memory_WE(memory_WE),
+        .CAD(CAD),
+        .af(af)
+    );
+    
+    // General Purpose Registers
+    GP_Registers gp_inst (
+        .clk(clk),
+        .reset(reset),
+        .portA_addr(RS),
+        .portB_addr(RT),
+        .write_addr(CAD_delayed),
+        .write_data(data_in_delayed),
+        .write_enable(E_delayed & GP_WE_delayed),
+        .portA_data(portA_data),
+        .portB_data(portB_data)
+    );
+    
+    // ALU
+    ALU alu_inst (
+        .operand_A(portA_data),
+        .operand_B(ALU_operand_B),
+        .ALU_function(ALU_function),
+        .result(ALU_result),
+        .zero_flag(),
+        .overflow_flag()
+    );
+    
+    // Shifter
+    Shifter shifter_inst (
+        .data_in(portB_data),
+        .shift_amount(shamt),
+        .shift_variable(portA_data[4:0]),
+        .shift_function(shift_function),
+        .result(shift_result)
+    );
+    
+    // Immediate Extension Unit
+    Immediate_Extension ext_inst (
+        .immediate(immediate),
+        .extension_type(af[2]),
+        .extended_immediate(immediate_extended)
+    );
+    
+    // Branch Control Evaluation Unit
+    BCE bce_inst (
+        .portA_data(portA_data),
+        .portB_data(portB_data),
+        .instruction(instruction),
+        .branch_taken(branch_taken)
+    );
+    
+    // =====================================================================
+    // Output Assignments
+    // =====================================================================
+    assign aluresout = ALU_result;
+    assign shift_resultout = shift_result;
+    assign GP_DATA_INout = GP_data_in;
+
+endmodule
+
+// =========================================================================
+// Supporting Module Definitions
+// (These would typically be in separate files)
+// =========================================================================
+
+// Memory Module
+module Memory_Module (
+    input wire clk,
+    input wire reset,
+    input wire [31:0] address,
+    input wire [31:0] write_data,
+    input wire WE,
+    input wire [31:0] instruction_address,
+    output reg [31:0] instruction,
+    output reg [31:0] data_out,
+    output reg E
+);
+    
+    reg [31:0] memory [0:1023]; // 1KB memory
+    
+    // Initialize memory with test instructions
+    initial begin
+        // LW
+        memory[0] = 32'b10001100100001010000000000100010;
+        // SW  
+        memory[1] = 32'b10101100100001010000000000100010;
+        // ADDI
+        memory[2] = 32'b00100000100001010000000000000100;
+        // ADDIU
+        memory[3] = 32'b00100100100001010000000000000100;
+        // ANDI
+        memory[4] = 32'b00110000100001010000000000000100;
+        // ORI
+        memory[5] = 32'b00110100100001010000000000000100;
+        // R-type ADD
+        memory[6] = 32'b00000000100001010010000000100000;
+        // R-type SUB
+        memory[7] = 32'b00000000100001010010000000100010;
+        // SLL
+        memory[8] = 32'b00000000100001010010000001000000;
+        // BEQ
+        memory[9] = 32'b00010000100000010000000000000100;
+        // J
+        memory[10] = 32'b00001000000000000000000000001001;
+        // JAL
+        memory[11] = 32'b00001100000000000000000000001001;
+        // JR
+        memory[12] = 32'b00000000100001010010000000001000;
+        // NOP (for safety)
+        memory[13] = 32'b00000000000000000000000000000000;
+        // Test data
+        memory[100] = 32'h12345678;
+        memory[101] = 32'hABCDEF00;
+    end
+    
+    always @(posedge clk) begin
+        if (reset) begin
+            E <= 1'b0;
+        end else begin
+            // Instruction fetch
+            instruction <= memory[instruction_address[31:2]];
+            
+            // Data memory operations
+            if (WE) begin
+                memory[address[31:2]] <= write_data;
+                E <= 1'b1;
+            end else begin
+                data_out <= memory[address[31:2]];
+                E <= 1'b1;
+            end
+        end
+    end
+endmodule
+
+// GP Registers Module
+module GP_Registers (
+    input wire clk,
+    input wire reset,
+    input wire [4:0] portA_addr,
+    input wire [4:0] portB_addr,
+    input wire [4:0] write_addr,
+    input wire [31:0] write_data,
+    input wire write_enable,
+    output wire [31:0] portA_data,
+    output wire [31:0] portB_data
+);
+    
+    reg [31:0] registers [0:31];
+    integer i;
+    
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            for (i = 0; i < 32; i = i + 1)
+                registers[i] <= 32'b0;
+        end else if (write_enable && write_addr != 5'b0) begin
+            registers[write_addr] <= write_data;
+        end
+    end
+    
+    assign portA_data = (portA_addr == 5'b0) ? 32'b0 : registers[portA_addr];
+    assign portB_data = (portB_addr == 5'b0) ? 32'b0 : registers[portB_addr];
+endmodule
+
+// ALU Module
+module ALU (
+    input wire [31:0] operand_A,
+    input wire [31:0] operand_B,
+    input wire [3:0] ALU_function,
+    output reg [31:0] result,
+    output wire zero_flag,
+    output wire overflow_flag
+);
+    
+    always @(*) begin
+        case (ALU_function)
+            4'b0000: result = operand_A + operand_B;     // ADD
+            4'b0001: result = operand_A - operand_B;     // SUB
+            4'b0010: result = operand_A & operand_B;     // AND
+            4'b0011: result = operand_A | operand_B;     // OR
+            4'b0100: result = operand_A ^ operand_B;     // XOR
+            4'b0101: result = ~(operand_A | operand_B);  // NOR
+            4'b0110: result = (operand_A < operand_B) ? 32'b1 : 32'b0; // SLT
+            4'b0111: result = ($unsigned(operand_A) < $unsigned(operand_B)) ? 32'b1 : 32'b0; // SLTU
+            default: result = 32'b0;
+        endcase
+    end
+    
+    assign zero_flag = (result == 32'b0);
+    assign overflow_flag = 1'b0; // Simplified
+endmodule
+
+// Shifter Module
+module Shifter (
+    input wire [31:0] data_in,
+    input wire [4:0] shift_amount,
+    input wire [4:0] shift_variable,
+    input wire [1:0] shift_function,
+    output reg [31:0] result
+);
+    
+    wire [4:0] actual_shift = (shift_function[1]) ? shift_variable : shift_amount;
+    
+    always @(*) begin
+        case (shift_function[0])
+            1'b0: result = data_in << actual_shift;     // SLL, SLLV
+            1'b1: result = data_in >> actual_shift;     // SRL, SRLV (logical)
+            default: result = $signed(data_in) >>> actual_shift; // SRA, SRAV (arithmetic)
+        endcase
+    end
+endmodule
+
+// Immediate Extension Module
+module Immediate_Extension (
+    input wire [15:0] immediate,
+    input wire extension_type,
+    output wire [31:0] extended_immediate
+);
+    
+    assign extended_immediate = extension_type ? 
+                               {16'b0, immediate} :         // Zero extension
+                               {{16{immediate[15]}}, immediate}; // Sign extension
+endmodule
+
+// Branch Control Evaluation Unit
+module BCE (
+    input wire [31:0] portA_data,
+    input wire [31:0] portB_data,
+    input wire [31:0] instruction,
+    output reg branch_taken
+);
+    
+    wire [5:0] opcode = instruction[31:26];
+    wire [4:0] rt = instruction[20:16];
+    
+    always @(*) begin
+        case (opcode)
+            6'b000001: // BLTZ, BGEZ
+                branch_taken = rt[0] ? ($signed(portA_data) >= 0) : ($signed(portA_data) < 0);
+            6'b000100: // BEQ
+                branch_taken = (portA_data == portB_data);
+            6'b000101: // BNE
+                branch_taken = (portA_data != portB_data);
+            6'b000110: // BLEZ
+                branch_taken = ($signed(portA_data) <= 0);
+            6'b000111: // BGTZ
+                branch_taken = ($signed(portA_data) > 0);
+            default: branch_taken = 1'b0;
+        endcase
+    end
+endmodule
+
+// Instruction Decoder Module
+module Instruction_Decoder (
+    input wire [31:0] instruction,
+    output reg [1:0] PC_MUX_SEL,
+    output reg [1:0] GP_MUX_SEL,
+    output reg ALU_OP_MUX_SEL,
+    output reg [3:0] ALU_function,
+    output reg [1:0] shift_function,
+    output reg GP_WE,
+    output reg memory_WE,
+    output reg [4:0] CAD,
+    output reg [2:0] af
+);
+    
+    wire [5:0] opcode = instruction[31:26];
+    wire [5:0] funct = instruction[5:0];
+    wire [4:0] rt = instruction[20:16];
+    wire [4:0] rd = instruction[15:11];
+    
+    always @(*) begin
+        // Default values
+        PC_MUX_SEL = 2'b00;
+        GP_MUX_SEL = 2'b00;
+        ALU_OP_MUX_SEL = 1'b0;
+        ALU_function = 4'b0000;
+        shift_function = 2'b00;
+        GP_WE = 1'b0;
+        memory_WE = 1'b0;
+        CAD = 5'b0;
+        af = 3'b000;
+        
+        case (opcode)
+            6'b000000: begin // R-type instructions
+                GP_WE = 1'b1;
+                CAD = rd;
+                case (funct)
+                    6'b100000: ALU_function = 4'b0000; // ADD
+                    6'b100010: ALU_function = 4'b0001; // SUB
+                    6'b100100: ALU_function = 4'b0010; // AND
+                    6'b100101: ALU_function = 4'b0011; // OR
+                    6'b100110: ALU_function = 4'b0100; // XOR
+                    6'b100111: ALU_function = 4'b0101; // NOR
+                    6'b101010: ALU_function = 4'b0110; // SLT
+                    6'b101011: ALU_function = 4'b0111; // SLTU
+                    6'b000000: begin // SLL
+                        GP_MUX_SEL = 2'b10;
+                        shift_function = 2'b00;
+                    end
+                    6'b000010: begin // SRL
+                        GP_MUX_SEL = 2'b10;
+                        shift_function = 2'b01;
+                    end
+                    6'b001000: begin // JR
+                        PC_MUX_SEL = 2'b11;
+                        GP_WE = 1'b0;
+                    end
+                    6'b001001: begin // JALR
+                        PC_MUX_SEL = 2'b11;
+                        GP_MUX_SEL = 2'b11;
+                        CAD = 5'd31;
+                    end
+                endcase
+            end
+            
+            6'b100011: begin // LW
+                ALU_OP_MUX_SEL = 1'b1;
+                GP_WE = 1'b1;
+                GP_MUX_SEL = 2'b01;
+                CAD = rt;
+                af[2] = 1'b0; // Sign extend
+            end
+            
+            6'b101011: begin // SW
+                ALU_OP_MUX_SEL = 1'b1;
+                memory_WE = 1'b1;
+                af[2] = 1'b0; // Sign extend
+            end
+            
+            6'b001000: begin // ADDI
+                ALU_OP_MUX_SEL = 1'b1;
+                GP_WE = 1'b1;
+                CAD = rt;
+                af[2] = 1'b0; // Sign extend
+            end
+            
+            6'b001100: begin // ANDI
+                ALU_OP_MUX_SEL = 1'b1;
+                ALU_function = 4'b0010;
+                GP_WE = 1'b1;
+                CAD = rt;
+                af[2] = 1'b1; // Zero extend
+            end
+            
+            6'b001101: begin // ORI
+                ALU_OP_MUX_SEL = 1'b1;
+                ALU_function = 4'b0011;
+                GP_WE = 1'b1;
+                CAD = rt;
+                af[2] = 1'b1; // Zero extend
+            end
+            
+            // Branch instructions
+            6'b000001, 6'b000100, 6'b000101, 6'b000110, 6'b000111: begin
+                PC_MUX_SEL = 2'b01;
+            end
+            
+            6'b000010: begin // J
+                PC_MUX_SEL = 2'b10;
+            end
+            
+            6'b000011: begin // JAL
+                PC_MUX_SEL = 2'b10;
+                GP_WE = 1'b1;
+                GP_MUX_SEL = 2'b11;
+                CAD = 5'd31;
+            end
+        endcase
+    end
+endmodule 

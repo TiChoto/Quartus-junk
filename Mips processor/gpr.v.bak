@@ -1,0 +1,30 @@
+module gpr (
+    input clk,
+    input Sw,
+    input [31:0] Sin,
+    input [4:0] Sa, Sb, Sc,
+    output reg [31:0] Souta,
+    output reg [31:0] Soutb
+);
+    reg [31:0] regfile [31:0];
+    wire [31:0] decSa = (1 << Sa);
+    wire [31:0] decSb = (1 << Sb);
+    wire [31:0] decSc = (1 << Sc);
+    integer i;
+
+    always @(posedge clk) begin
+        for (i = 1; i < 32; i = i + 1)
+            if (Sw && decSc[i])
+                regfile[i] <= Sin;
+        regfile[0] <= 32'b0;
+    end
+
+    always @(*) begin
+        Souta = 32'b0;
+        Soutb = 32'b0;
+        for (i = 0; i < 32; i = i + 1) begin
+            if (decSa[i]) Souta = Souta | regfile[i];
+            if (decSb[i]) Soutb = Soutb | regfile[i];
+        end
+    end
+endmodule

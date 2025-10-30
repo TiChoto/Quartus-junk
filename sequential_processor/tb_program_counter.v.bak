@@ -1,0 +1,26 @@
+module tb_program_counter;
+
+reg clk;
+reg reset_n;
+wire [3:0] pc_out;
+
+program_counter uut (
+    .clk(clk),
+    .reset_n(reset_n),
+    .pc_out(pc_out)
+);
+
+initial begin
+    clk = 0;
+    forever #5 clk = ~clk; // 10ns Clock Period
+end
+
+initial begin
+    reset_n = 0;
+    #15 reset_n = 1; // Release Reset at 15ns
+
+    #100; // Run simulation for some time
+    $stop;
+end
+
+endmodule

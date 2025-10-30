@@ -1,0 +1,963 @@
+Analysis & Synthesis report for Mipsmate
+Wed Jul 02 13:04:36 2025
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Registers Packed Into Inferred Megafunctions
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for top_mips:top_mips|Memory_Module:memory_inst|altsyncram:memory_rtl_0|altsyncram_emv1:auto_generated
+ 14. Source assignments for top_mips:top_mips|Memory_Module:memory_inst|altsyncram:memory_rtl_1|altsyncram_emv1:auto_generated
+ 15. Parameter Settings for Inferred Entity Instance: top_mips:top_mips|Memory_Module:memory_inst|altsyncram:memory_rtl_0
+ 16. Parameter Settings for Inferred Entity Instance: top_mips:top_mips|Memory_Module:memory_inst|altsyncram:memory_rtl_1
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Port Connectivity Checks: "top_mips:top_mips|ALU:alu_inst"
+ 19. Port Connectivity Checks: "top_mips:top_mips|Instruction_Decoder:decoder_inst"
+ 20. Port Connectivity Checks: "top_mips:top_mips"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Wed Jul 02 13:04:36 2025       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; Mipsmate                                    ;
+; Top-level Entity Name           ; baseline_c5gx                               ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 1064                                        ;
+; Total pins                      ; 236                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 65,536                                      ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC5C6F27C7     ;                    ;
+; Top-level entity name                                                           ; baseline_c5gx      ; Mipsmate           ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                               ;
++-------------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                   ; Library ;
++-------------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------+---------+
+; baseline_c5gx.v                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/admin/Desktop/Quartus/baseline_c5gx.v                                 ;         ;
+; top_mips.v                                      ; yes             ; User Verilog HDL File                                 ; C:/Users/admin/Desktop/Quartus/top_mips.v                                      ;         ;
+; altsyncram.tdf                                  ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf          ;         ;
+; stratix_ram_block.inc                           ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc   ;         ;
+; lpm_mux.inc                                     ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc             ;         ;
+; lpm_decode.inc                                  ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc          ;         ;
+; aglobal201.inc                                  ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc          ;         ;
+; a_rdenreg.inc                                   ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc           ;         ;
+; altrom.inc                                      ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc              ;         ;
+; altram.inc                                      ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc              ;         ;
+; altdpram.inc                                    ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc            ;         ;
+; db/altsyncram_emv1.tdf                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/admin/Desktop/Quartus/db/altsyncram_emv1.tdf                          ;         ;
+; db/mipsmate.ram0_memory_module_17eecd75.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/admin/Desktop/Quartus/db/mipsmate.ram0_memory_module_17eecd75.hdl.mif ;         ;
++-------------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 1180        ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 1310        ;
+;     -- 7 input functions                    ; 22          ;
+;     -- 6 input functions                    ; 853         ;
+;     -- 5 input functions                    ; 196         ;
+;     -- 4 input functions                    ; 121         ;
+;     -- <=3 input functions                  ; 118         ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 1064        ;
+;                                             ;             ;
+; I/O pins                                    ; 236         ;
+; Total MLAB memory bits                      ; 0           ;
+; Total block memory bits                     ; 65536       ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; SW[0]~input ;
+; Maximum fan-out                             ; 1128        ;
+; Total fan-out                               ; 12844       ;
+; Average fan-out                             ; 4.27        ;
++---------------------------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                            ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                               ; Entity Name         ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |baseline_c5gx                               ; 1310 (0)            ; 1064 (0)                  ; 65536             ; 0          ; 236  ; 0            ; |baseline_c5gx                                                                                                    ; baseline_c5gx       ; work         ;
+;    |top_mips:top_mips|                       ; 1310 (266)          ; 1064 (71)                 ; 65536             ; 0          ; 0    ; 0            ; |baseline_c5gx|top_mips:top_mips                                                                                  ; top_mips            ; work         ;
+;       |ALU:alu_inst|                         ; 96 (96)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |baseline_c5gx|top_mips:top_mips|ALU:alu_inst                                                                     ; ALU                 ; work         ;
+;       |BCE:bce_inst|                         ; 26 (26)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |baseline_c5gx|top_mips:top_mips|BCE:bce_inst                                                                     ; BCE                 ; work         ;
+;       |GP_Registers:gp_inst|                 ; 785 (785)           ; 992 (992)                 ; 0                 ; 0          ; 0    ; 0            ; |baseline_c5gx|top_mips:top_mips|GP_Registers:gp_inst                                                             ; GP_Registers        ; work         ;
+;       |Instruction_Decoder:decoder_inst|     ; 34 (34)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |baseline_c5gx|top_mips:top_mips|Instruction_Decoder:decoder_inst                                                 ; Instruction_Decoder ; work         ;
+;       |Memory_Module:memory_inst|            ; 3 (3)               ; 1 (1)                     ; 65536             ; 0          ; 0    ; 0            ; |baseline_c5gx|top_mips:top_mips|Memory_Module:memory_inst                                                        ; Memory_Module       ; work         ;
+;          |altsyncram:memory_rtl_0|           ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |baseline_c5gx|top_mips:top_mips|Memory_Module:memory_inst|altsyncram:memory_rtl_0                                ; altsyncram          ; work         ;
+;             |altsyncram_emv1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |baseline_c5gx|top_mips:top_mips|Memory_Module:memory_inst|altsyncram:memory_rtl_0|altsyncram_emv1:auto_generated ; altsyncram_emv1     ; work         ;
+;          |altsyncram:memory_rtl_1|           ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |baseline_c5gx|top_mips:top_mips|Memory_Module:memory_inst|altsyncram:memory_rtl_1                                ; altsyncram          ; work         ;
+;             |altsyncram_emv1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |baseline_c5gx|top_mips:top_mips|Memory_Module:memory_inst|altsyncram:memory_rtl_1|altsyncram_emv1:auto_generated ; altsyncram_emv1     ; work         ;
+;       |Shifter:shifter_inst|                 ; 100 (100)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |baseline_c5gx|top_mips:top_mips|Shifter:shifter_inst                                                             ; Shifter             ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                              ;
++---------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
+; Name                                                                                                          ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                                             ;
++---------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
+; top_mips:top_mips|Memory_Module:memory_inst|altsyncram:memory_rtl_0|altsyncram_emv1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 32           ; 1024         ; 32           ; 32768 ; db/Mipsmate.ram0_Memory_Module_17eecd75.hdl.mif ;
+; top_mips:top_mips|Memory_Module:memory_inst|altsyncram:memory_rtl_1|altsyncram_emv1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 32           ; 1024         ; 32           ; 32768 ; db/Mipsmate.ram0_Memory_Module_17eecd75.hdl.mif ;
++---------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                               ;
++---------------------------------------------------------+----------------------------------------+
+; Register name                                           ; Reason for Removal                     ;
++---------------------------------------------------------+----------------------------------------+
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][0]  ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][1]  ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][2]  ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][3]  ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][4]  ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][5]  ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][6]  ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][7]  ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][8]  ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][9]  ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][10] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][11] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][12] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][13] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][14] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][15] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][16] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][17] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][18] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][19] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][20] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][21] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][22] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][23] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][24] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][25] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][26] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][27] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][28] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][29] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][30] ; Stuck at GND due to stuck port data_in ;
+; top_mips:top_mips|GP_Registers:gp_inst|registers[0][31] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 32                  ;                                        ;
++---------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1064  ;
+; Number of registers using Synchronous Clear  ; 13    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 1063  ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 994   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                                     ;
++----------------------------------------------------------------+----------------------------------------------------------+------+
+; Register Name                                                  ; Megafunction                                             ; Type ;
++----------------------------------------------------------------+----------------------------------------------------------+------+
+; top_mips:top_mips|Memory_Module:memory_inst|instruction[0..31] ; top_mips:top_mips|Memory_Module:memory_inst|memory_rtl_0 ; RAM  ;
+; top_mips:top_mips|Memory_Module:memory_inst|data_out[0..31]    ; top_mips:top_mips|Memory_Module:memory_inst|memory_rtl_1 ; RAM  ;
++----------------------------------------------------------------+----------------------------------------------------------+------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |baseline_c5gx|top_mips:top_mips|PC[0]                                      ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |baseline_c5gx|top_mips:top_mips|PC[31]                                     ;
+; 5:1                ; 26 bits   ; 78 LEs        ; 52 LEs               ; 26 LEs                 ; Yes        ; |baseline_c5gx|top_mips:top_mips|PC[8]                                      ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; Yes        ; |baseline_c5gx|top_mips:top_mips|data_in_delayed[11]                        ;
+; 65:1               ; 5 bits    ; 215 LEs       ; 50 LEs               ; 165 LEs                ; Yes        ; |baseline_c5gx|top_mips:top_mips|CAD_delayed[2]                             ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |baseline_c5gx|top_mips:top_mips|data_in_delayed[14]                        ;
+; 17:1               ; 12 bits   ; 132 LEs       ; 96 LEs               ; 36 LEs                 ; Yes        ; |baseline_c5gx|top_mips:top_mips|data_in_delayed[27]                        ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 48 LEs               ; 4 LEs                  ; Yes        ; |baseline_c5gx|top_mips:top_mips|data_in_delayed[31]                        ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |baseline_c5gx|top_mips:top_mips|Shifter:shifter_inst|ShiftRight0           ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |baseline_c5gx|top_mips:top_mips|Shifter:shifter_inst|ShiftLeft0            ;
+; 4:1                ; 50 bits   ; 100 LEs       ; 100 LEs              ; 0 LEs                  ; No         ; |baseline_c5gx|top_mips:top_mips|Shifter:shifter_inst|ShiftLeft0            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |baseline_c5gx|top_mips:top_mips|Shifter:shifter_inst|ShiftRight0           ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |baseline_c5gx|top_mips:top_mips|Shifter:shifter_inst|ShiftRight0           ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |baseline_c5gx|top_mips:top_mips|Shifter:shifter_inst|ShiftRight0           ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |baseline_c5gx|top_mips:top_mips|Mux61                                      ;
+; 8:1                ; 11 bits   ; 55 LEs        ; 44 LEs               ; 11 LEs                 ; No         ; |baseline_c5gx|top_mips:top_mips|ALU:alu_inst|Mux27                         ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |baseline_c5gx|top_mips:top_mips|Shifter:shifter_inst|result[1]             ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |baseline_c5gx|top_mips:top_mips|GP_Registers:gp_inst|portB_data[10]        ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |baseline_c5gx|top_mips:top_mips|GP_Registers:gp_inst|portA_data[9]         ;
+; 64:1               ; 4 bits    ; 168 LEs       ; 44 LEs               ; 124 LEs                ; No         ; |baseline_c5gx|top_mips:top_mips|Instruction_Decoder:decoder_inst|Selector2 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for top_mips:top_mips|Memory_Module:memory_inst|altsyncram:memory_rtl_0|altsyncram_emv1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                          ;
++---------------------------------+--------------------+------+-------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                           ;
++---------------------------------+--------------------+------+-------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for top_mips:top_mips|Memory_Module:memory_inst|altsyncram:memory_rtl_1|altsyncram_emv1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                          ;
++---------------------------------+--------------------+------+-------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                           ;
++---------------------------------+--------------------+------+-------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: top_mips:top_mips|Memory_Module:memory_inst|altsyncram:memory_rtl_0 ;
++------------------------------------+-------------------------------------------------+-------------------------------+
+; Parameter Name                     ; Value                                           ; Type                          ;
++------------------------------------+-------------------------------------------------+-------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                               ; Untyped                       ;
+; AUTO_CARRY_CHAINS                  ; ON                                              ; AUTO_CARRY                    ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                             ; IGNORE_CARRY                  ;
+; AUTO_CASCADE_CHAINS                ; ON                                              ; AUTO_CASCADE                  ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                             ; IGNORE_CASCADE                ;
+; WIDTH_BYTEENA                      ; 1                                               ; Untyped                       ;
+; OPERATION_MODE                     ; DUAL_PORT                                       ; Untyped                       ;
+; WIDTH_A                            ; 32                                              ; Untyped                       ;
+; WIDTHAD_A                          ; 10                                              ; Untyped                       ;
+; NUMWORDS_A                         ; 1024                                            ; Untyped                       ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                    ; Untyped                       ;
+; ADDRESS_ACLR_A                     ; NONE                                            ; Untyped                       ;
+; OUTDATA_ACLR_A                     ; NONE                                            ; Untyped                       ;
+; WRCONTROL_ACLR_A                   ; NONE                                            ; Untyped                       ;
+; INDATA_ACLR_A                      ; NONE                                            ; Untyped                       ;
+; BYTEENA_ACLR_A                     ; NONE                                            ; Untyped                       ;
+; WIDTH_B                            ; 32                                              ; Untyped                       ;
+; WIDTHAD_B                          ; 10                                              ; Untyped                       ;
+; NUMWORDS_B                         ; 1024                                            ; Untyped                       ;
+; INDATA_REG_B                       ; CLOCK1                                          ; Untyped                       ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                          ; Untyped                       ;
+; RDCONTROL_REG_B                    ; CLOCK0                                          ; Untyped                       ;
+; ADDRESS_REG_B                      ; CLOCK0                                          ; Untyped                       ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                    ; Untyped                       ;
+; BYTEENA_REG_B                      ; CLOCK1                                          ; Untyped                       ;
+; INDATA_ACLR_B                      ; NONE                                            ; Untyped                       ;
+; WRCONTROL_ACLR_B                   ; NONE                                            ; Untyped                       ;
+; ADDRESS_ACLR_B                     ; NONE                                            ; Untyped                       ;
+; OUTDATA_ACLR_B                     ; NONE                                            ; Untyped                       ;
+; RDCONTROL_ACLR_B                   ; NONE                                            ; Untyped                       ;
+; BYTEENA_ACLR_B                     ; NONE                                            ; Untyped                       ;
+; WIDTH_BYTEENA_A                    ; 1                                               ; Untyped                       ;
+; WIDTH_BYTEENA_B                    ; 1                                               ; Untyped                       ;
+; RAM_BLOCK_TYPE                     ; AUTO                                            ; Untyped                       ;
+; BYTE_SIZE                          ; 8                                               ; Untyped                       ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                        ; Untyped                       ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                            ; Untyped                       ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                            ; Untyped                       ;
+; INIT_FILE                          ; db/Mipsmate.ram0_Memory_Module_17eecd75.hdl.mif ; Untyped                       ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                          ; Untyped                       ;
+; MAXIMUM_DEPTH                      ; 0                                               ; Untyped                       ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                          ; Untyped                       ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                          ; Untyped                       ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                          ; Untyped                       ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                          ; Untyped                       ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                 ; Untyped                       ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                 ; Untyped                       ;
+; ENABLE_ECC                         ; FALSE                                           ; Untyped                       ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                           ; Untyped                       ;
+; WIDTH_ECCSTATUS                    ; 3                                               ; Untyped                       ;
+; DEVICE_FAMILY                      ; Cyclone V                                       ; Untyped                       ;
+; CBXI_PARAMETER                     ; altsyncram_emv1                                 ; Untyped                       ;
++------------------------------------+-------------------------------------------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: top_mips:top_mips|Memory_Module:memory_inst|altsyncram:memory_rtl_1 ;
++------------------------------------+-------------------------------------------------+-------------------------------+
+; Parameter Name                     ; Value                                           ; Type                          ;
++------------------------------------+-------------------------------------------------+-------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                               ; Untyped                       ;
+; AUTO_CARRY_CHAINS                  ; ON                                              ; AUTO_CARRY                    ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                             ; IGNORE_CARRY                  ;
+; AUTO_CASCADE_CHAINS                ; ON                                              ; AUTO_CASCADE                  ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                             ; IGNORE_CASCADE                ;
+; WIDTH_BYTEENA                      ; 1                                               ; Untyped                       ;
+; OPERATION_MODE                     ; DUAL_PORT                                       ; Untyped                       ;
+; WIDTH_A                            ; 32                                              ; Untyped                       ;
+; WIDTHAD_A                          ; 10                                              ; Untyped                       ;
+; NUMWORDS_A                         ; 1024                                            ; Untyped                       ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                    ; Untyped                       ;
+; ADDRESS_ACLR_A                     ; NONE                                            ; Untyped                       ;
+; OUTDATA_ACLR_A                     ; NONE                                            ; Untyped                       ;
+; WRCONTROL_ACLR_A                   ; NONE                                            ; Untyped                       ;
+; INDATA_ACLR_A                      ; NONE                                            ; Untyped                       ;
+; BYTEENA_ACLR_A                     ; NONE                                            ; Untyped                       ;
+; WIDTH_B                            ; 32                                              ; Untyped                       ;
+; WIDTHAD_B                          ; 10                                              ; Untyped                       ;
+; NUMWORDS_B                         ; 1024                                            ; Untyped                       ;
+; INDATA_REG_B                       ; CLOCK1                                          ; Untyped                       ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                          ; Untyped                       ;
+; RDCONTROL_REG_B                    ; CLOCK0                                          ; Untyped                       ;
+; ADDRESS_REG_B                      ; CLOCK0                                          ; Untyped                       ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                    ; Untyped                       ;
+; BYTEENA_REG_B                      ; CLOCK1                                          ; Untyped                       ;
+; INDATA_ACLR_B                      ; NONE                                            ; Untyped                       ;
+; WRCONTROL_ACLR_B                   ; NONE                                            ; Untyped                       ;
+; ADDRESS_ACLR_B                     ; NONE                                            ; Untyped                       ;
+; OUTDATA_ACLR_B                     ; NONE                                            ; Untyped                       ;
+; RDCONTROL_ACLR_B                   ; NONE                                            ; Untyped                       ;
+; BYTEENA_ACLR_B                     ; NONE                                            ; Untyped                       ;
+; WIDTH_BYTEENA_A                    ; 1                                               ; Untyped                       ;
+; WIDTH_BYTEENA_B                    ; 1                                               ; Untyped                       ;
+; RAM_BLOCK_TYPE                     ; AUTO                                            ; Untyped                       ;
+; BYTE_SIZE                          ; 8                                               ; Untyped                       ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                        ; Untyped                       ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                            ; Untyped                       ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                            ; Untyped                       ;
+; INIT_FILE                          ; db/Mipsmate.ram0_Memory_Module_17eecd75.hdl.mif ; Untyped                       ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                          ; Untyped                       ;
+; MAXIMUM_DEPTH                      ; 0                                               ; Untyped                       ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                          ; Untyped                       ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                          ; Untyped                       ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                          ; Untyped                       ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                          ; Untyped                       ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                 ; Untyped                       ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                 ; Untyped                       ;
+; ENABLE_ECC                         ; FALSE                                           ; Untyped                       ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                           ; Untyped                       ;
+; WIDTH_ECCSTATUS                    ; 3                                               ; Untyped                       ;
+; DEVICE_FAMILY                      ; Cyclone V                                       ; Untyped                       ;
+; CBXI_PARAMETER                     ; altsyncram_emv1                                 ; Untyped                       ;
++------------------------------------+-------------------------------------------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                ;
++-------------------------------------------+---------------------------------------------------------------------+
+; Name                                      ; Value                                                               ;
++-------------------------------------------+---------------------------------------------------------------------+
+; Number of entity instances                ; 2                                                                   ;
+; Entity Instance                           ; top_mips:top_mips|Memory_Module:memory_inst|altsyncram:memory_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                           ;
+;     -- WIDTH_A                            ; 32                                                                  ;
+;     -- NUMWORDS_A                         ; 1024                                                                ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                        ;
+;     -- WIDTH_B                            ; 32                                                                  ;
+;     -- NUMWORDS_B                         ; 1024                                                                ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                              ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                        ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                            ;
+; Entity Instance                           ; top_mips:top_mips|Memory_Module:memory_inst|altsyncram:memory_rtl_1 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                           ;
+;     -- WIDTH_A                            ; 32                                                                  ;
+;     -- NUMWORDS_A                         ; 1024                                                                ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                        ;
+;     -- WIDTH_B                            ; 32                                                                  ;
+;     -- NUMWORDS_B                         ; 1024                                                                ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                              ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                        ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                            ;
++-------------------------------------------+---------------------------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "top_mips:top_mips|ALU:alu_inst" ;
++---------------+--------+----------+------------------------+
+; Port          ; Type   ; Severity ; Details                ;
++---------------+--------+----------+------------------------+
+; zero_flag     ; Output ; Info     ; Explicitly unconnected ;
+; overflow_flag ; Output ; Info     ; Explicitly unconnected ;
++---------------+--------+----------+------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top_mips:top_mips|Instruction_Decoder:decoder_inst"                                     ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; af[1..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top_mips:top_mips"                                                                                                                              ;
++-----------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                                                                              ;
++-----------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------+
+; aluresout       ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (5 bits) it drives; bit(s) "aluresout[31..5]" have no fanouts       ;
+; shift_resultout ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (5 bits) it drives; bit(s) "shift_resultout[31..5]" have no fanouts ;
+; GP_DATA_INout   ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (5 bits) it drives; bit(s) "GP_DATA_INout[31..5]" have no fanouts   ;
++-----------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 1064                        ;
+;     CLR               ; 56                          ;
+;     CLR SCLR          ; 13                          ;
+;     ENA CLR           ; 994                         ;
+;     plain             ; 1                           ;
+; arriav_io_obuf        ; 97                          ;
+; arriav_lcell_comb     ; 1311                        ;
+;     arith             ; 93                          ;
+;         1 data inputs ; 30                          ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 15                          ;
+;         5 data inputs ; 32                          ;
+;     extend            ; 22                          ;
+;         7 data inputs ; 22                          ;
+;     normal            ; 1196                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 20                          ;
+;         3 data inputs ; 36                          ;
+;         4 data inputs ; 121                         ;
+;         5 data inputs ; 164                         ;
+;         6 data inputs ; 853                         ;
+; boundary_port         ; 236                         ;
+; stratixv_ram_block    ; 64                          ;
+;                       ;                             ;
+; Max LUT depth         ; 9.10                        ;
+; Average LUT depth     ; 7.64                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:09     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Wed Jul 02 13:04:16 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Mipsmate -c Mipsmate
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file baseline_c5gx.v
+    Info (12023): Found entity 1: baseline_c5gx File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 38
+Info (12021): Found 8 design units, including 8 entities, in source file top_mips.v
+    Info (12023): Found entity 1: top_mips File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 1
+    Info (12023): Found entity 2: Memory_Module File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 231
+    Info (12023): Found entity 3: GP_Registers File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 300
+    Info (12023): Found entity 4: ALU File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 329
+    Info (12023): Found entity 5: Shifter File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 357
+    Info (12023): Found entity 6: Immediate_Extension File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 377
+    Info (12023): Found entity 7: BCE File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 389
+    Info (12023): Found entity 8: Instruction_Decoder File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 417
+Info (12021): Found 1 design units, including 1 entities, in source file testbench.v
+    Info (12023): Found entity 1: testbench File: C:/Users/admin/Desktop/Quartus/testbench.v Line: 2
+Info (12127): Elaborating entity "baseline_c5gx" for the top level hierarchy
+Warning (10034): Output port "HEX2" at baseline_c5gx.v(83) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 83
+Warning (10034): Output port "HEX3" at baseline_c5gx.v(86) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 86
+Warning (10034): Output port "HDMI_TX_D" at baseline_c5gx.v(93) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+Warning (10034): Output port "HEX0" at baseline_c5gx.v(100) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 100
+Warning (10034): Output port "HEX1" at baseline_c5gx.v(103) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 103
+Warning (10034): Output port "HSMC_CLKOUT_n" at baseline_c5gx.v(111) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 111
+Warning (10034): Output port "HSMC_CLKOUT_p" at baseline_c5gx.v(112) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 112
+Warning (10034): Output port "LEDG[7..5]" at baseline_c5gx.v(132) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 132
+Warning (10034): Output port "SRAM_A" at baseline_c5gx.v(155) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+Warning (10034): Output port "ADC_CONVST" at baseline_c5gx.v(41) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 41
+Warning (10034): Output port "ADC_SCK" at baseline_c5gx.v(42) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 42
+Warning (10034): Output port "ADC_SDI" at baseline_c5gx.v(43) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 43
+Warning (10034): Output port "AUD_DACDAT" at baseline_c5gx.v(50) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 50
+Warning (10034): Output port "AUD_XCK" at baseline_c5gx.v(52) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 52
+Warning (10034): Output port "HDMI_TX_CLK" at baseline_c5gx.v(92) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 92
+Warning (10034): Output port "HDMI_TX_DE" at baseline_c5gx.v(94) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 94
+Warning (10034): Output port "HDMI_TX_HS" at baseline_c5gx.v(95) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 95
+Warning (10034): Output port "HDMI_TX_VS" at baseline_c5gx.v(97) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 97
+Warning (10034): Output port "HSMC_CLKOUT0" at baseline_c5gx.v(110) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 110
+Warning (10034): Output port "I2C_SCL" at baseline_c5gx.v(125) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 125
+Warning (10034): Output port "SD_CLK" at baseline_c5gx.v(144) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 144
+Warning (10034): Output port "SRAM_CE_n" at baseline_c5gx.v(156) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 156
+Warning (10034): Output port "SRAM_LB_n" at baseline_c5gx.v(158) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 158
+Warning (10034): Output port "SRAM_OE_n" at baseline_c5gx.v(159) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 159
+Warning (10034): Output port "SRAM_UB_n" at baseline_c5gx.v(160) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 160
+Warning (10034): Output port "SRAM_WE_n" at baseline_c5gx.v(161) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 161
+Warning (10034): Output port "UART_TX" at baseline_c5gx.v(171) has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 171
+Info (12128): Elaborating entity "top_mips" for hierarchy "top_mips:top_mips" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 178
+Warning (10036): Verilog HDL or VHDL warning at top_mips.v(26): object "RD" assigned a value but never read File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 26
+Info (12128): Elaborating entity "Memory_Module" for hierarchy "top_mips:top_mips|Memory_Module:memory_inst" File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 153
+Info (12128): Elaborating entity "Instruction_Decoder" for hierarchy "top_mips:top_mips|Instruction_Decoder:decoder_inst" File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 167
+Warning (10270): Verilog HDL Case Statement warning at top_mips.v(451): incomplete case statement has no default case item File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 451
+Warning (10270): Verilog HDL Case Statement warning at top_mips.v(447): incomplete case statement has no default case item File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 447
+Info (12128): Elaborating entity "GP_Registers" for hierarchy "top_mips:top_mips|GP_Registers:gp_inst" File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 180
+Warning (10240): Verilog HDL Always Construct warning at top_mips.v(315): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 315
+Info (12128): Elaborating entity "ALU" for hierarchy "top_mips:top_mips|ALU:alu_inst" File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 190
+Info (12128): Elaborating entity "Shifter" for hierarchy "top_mips:top_mips|Shifter:shifter_inst" File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 199
+Info (12128): Elaborating entity "Immediate_Extension" for hierarchy "top_mips:top_mips|Immediate_Extension:ext_inst" File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 206
+Info (12128): Elaborating entity "BCE" for hierarchy "top_mips:top_mips|BCE:bce_inst" File: C:/Users/admin/Desktop/Quartus/top_mips.v Line: 214
+Info (19000): Inferred 2 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "top_mips:top_mips|Memory_Module:memory_inst|memory_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1024
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/Mipsmate.ram0_Memory_Module_17eecd75.hdl.mif
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+        Info (286033): Parameter RDCONTROL_REG_B set to CLOCK0
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "top_mips:top_mips|Memory_Module:memory_inst|memory_rtl_1" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1024
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/Mipsmate.ram0_Memory_Module_17eecd75.hdl.mif
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+        Info (286033): Parameter RDCONTROL_REG_B set to CLOCK0
+Info (12130): Elaborated megafunction instantiation "top_mips:top_mips|Memory_Module:memory_inst|altsyncram:memory_rtl_0"
+Info (12133): Instantiated megafunction "top_mips:top_mips|Memory_Module:memory_inst|altsyncram:memory_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "10"
+    Info (12134): Parameter "NUMWORDS_B" = "1024"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/Mipsmate.ram0_Memory_Module_17eecd75.hdl.mif"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+    Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_emv1.tdf
+    Info (12023): Found entity 1: altsyncram_emv1 File: C:/Users/admin/Desktop/Quartus/db/altsyncram_emv1.tdf Line: 28
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "AUD_ADCLRCK" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 48
+    Warning (13040): bidirectional pin "AUD_BCLK" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 49
+    Warning (13040): bidirectional pin "AUD_DACLRCK" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 51
+    Warning (13040): bidirectional pin "HSMC_D[0]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 113
+    Warning (13040): bidirectional pin "HSMC_D[1]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 113
+    Warning (13040): bidirectional pin "HSMC_D[2]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 113
+    Warning (13040): bidirectional pin "HSMC_D[3]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 113
+    Warning (13040): bidirectional pin "HSMC_RX_n[0]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 118
+    Warning (13040): bidirectional pin "HSMC_RX_n[1]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 118
+    Warning (13040): bidirectional pin "HSMC_RX_n[2]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 118
+    Warning (13040): bidirectional pin "HSMC_RX_n[3]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 118
+    Warning (13040): bidirectional pin "HSMC_RX_n[4]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 118
+    Warning (13040): bidirectional pin "HSMC_RX_n[5]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 118
+    Warning (13040): bidirectional pin "HSMC_RX_n[6]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 118
+    Warning (13040): bidirectional pin "HSMC_RX_n[7]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 118
+    Warning (13040): bidirectional pin "HSMC_RX_n[8]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 118
+    Warning (13040): bidirectional pin "HSMC_RX_n[9]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 118
+    Warning (13040): bidirectional pin "HSMC_RX_n[10]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 118
+    Warning (13040): bidirectional pin "HSMC_RX_n[11]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 118
+    Warning (13040): bidirectional pin "HSMC_RX_n[12]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 118
+    Warning (13040): bidirectional pin "HSMC_RX_n[13]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 118
+    Warning (13040): bidirectional pin "HSMC_RX_n[14]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 118
+    Warning (13040): bidirectional pin "HSMC_RX_n[15]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 118
+    Warning (13040): bidirectional pin "HSMC_RX_n[16]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 118
+    Warning (13040): bidirectional pin "HSMC_RX_p[0]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 119
+    Warning (13040): bidirectional pin "HSMC_RX_p[1]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 119
+    Warning (13040): bidirectional pin "HSMC_RX_p[2]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 119
+    Warning (13040): bidirectional pin "HSMC_RX_p[3]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 119
+    Warning (13040): bidirectional pin "HSMC_RX_p[4]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 119
+    Warning (13040): bidirectional pin "HSMC_RX_p[5]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 119
+    Warning (13040): bidirectional pin "HSMC_RX_p[6]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 119
+    Warning (13040): bidirectional pin "HSMC_RX_p[7]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 119
+    Warning (13040): bidirectional pin "HSMC_RX_p[8]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 119
+    Warning (13040): bidirectional pin "HSMC_RX_p[9]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 119
+    Warning (13040): bidirectional pin "HSMC_RX_p[10]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 119
+    Warning (13040): bidirectional pin "HSMC_RX_p[11]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 119
+    Warning (13040): bidirectional pin "HSMC_RX_p[12]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 119
+    Warning (13040): bidirectional pin "HSMC_RX_p[13]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 119
+    Warning (13040): bidirectional pin "HSMC_RX_p[14]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 119
+    Warning (13040): bidirectional pin "HSMC_RX_p[15]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 119
+    Warning (13040): bidirectional pin "HSMC_RX_p[16]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 119
+    Warning (13040): bidirectional pin "HSMC_TX_n[0]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 120
+    Warning (13040): bidirectional pin "HSMC_TX_n[1]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 120
+    Warning (13040): bidirectional pin "HSMC_TX_n[2]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 120
+    Warning (13040): bidirectional pin "HSMC_TX_n[3]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 120
+    Warning (13040): bidirectional pin "HSMC_TX_n[4]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 120
+    Warning (13040): bidirectional pin "HSMC_TX_n[5]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 120
+    Warning (13040): bidirectional pin "HSMC_TX_n[6]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 120
+    Warning (13040): bidirectional pin "HSMC_TX_n[7]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 120
+    Warning (13040): bidirectional pin "HSMC_TX_n[8]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 120
+    Warning (13040): bidirectional pin "HSMC_TX_n[9]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 120
+    Warning (13040): bidirectional pin "HSMC_TX_n[10]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 120
+    Warning (13040): bidirectional pin "HSMC_TX_n[11]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 120
+    Warning (13040): bidirectional pin "HSMC_TX_n[12]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 120
+    Warning (13040): bidirectional pin "HSMC_TX_n[13]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 120
+    Warning (13040): bidirectional pin "HSMC_TX_n[14]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 120
+    Warning (13040): bidirectional pin "HSMC_TX_n[15]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 120
+    Warning (13040): bidirectional pin "HSMC_TX_n[16]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 120
+    Warning (13040): bidirectional pin "HSMC_TX_p[0]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 121
+    Warning (13040): bidirectional pin "HSMC_TX_p[1]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 121
+    Warning (13040): bidirectional pin "HSMC_TX_p[2]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 121
+    Warning (13040): bidirectional pin "HSMC_TX_p[3]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 121
+    Warning (13040): bidirectional pin "HSMC_TX_p[4]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 121
+    Warning (13040): bidirectional pin "HSMC_TX_p[5]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 121
+    Warning (13040): bidirectional pin "HSMC_TX_p[6]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 121
+    Warning (13040): bidirectional pin "HSMC_TX_p[7]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 121
+    Warning (13040): bidirectional pin "HSMC_TX_p[8]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 121
+    Warning (13040): bidirectional pin "HSMC_TX_p[9]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 121
+    Warning (13040): bidirectional pin "HSMC_TX_p[10]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 121
+    Warning (13040): bidirectional pin "HSMC_TX_p[11]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 121
+    Warning (13040): bidirectional pin "HSMC_TX_p[12]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 121
+    Warning (13040): bidirectional pin "HSMC_TX_p[13]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 121
+    Warning (13040): bidirectional pin "HSMC_TX_p[14]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 121
+    Warning (13040): bidirectional pin "HSMC_TX_p[15]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 121
+    Warning (13040): bidirectional pin "HSMC_TX_p[16]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 121
+    Warning (13040): bidirectional pin "I2C_SDA" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 126
+    Warning (13040): bidirectional pin "SD_CMD" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 145
+    Warning (13040): bidirectional pin "SD_DAT[0]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 146
+    Warning (13040): bidirectional pin "SD_DAT[1]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 146
+    Warning (13040): bidirectional pin "SD_DAT[2]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 146
+    Warning (13040): bidirectional pin "SD_DAT[3]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 146
+    Warning (13040): bidirectional pin "SRAM_D[0]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 157
+    Warning (13040): bidirectional pin "SRAM_D[1]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 157
+    Warning (13040): bidirectional pin "SRAM_D[2]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 157
+    Warning (13040): bidirectional pin "SRAM_D[3]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 157
+    Warning (13040): bidirectional pin "SRAM_D[4]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 157
+    Warning (13040): bidirectional pin "SRAM_D[5]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 157
+    Warning (13040): bidirectional pin "SRAM_D[6]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 157
+    Warning (13040): bidirectional pin "SRAM_D[7]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 157
+    Warning (13040): bidirectional pin "SRAM_D[8]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 157
+    Warning (13040): bidirectional pin "SRAM_D[9]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 157
+    Warning (13040): bidirectional pin "SRAM_D[10]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 157
+    Warning (13040): bidirectional pin "SRAM_D[11]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 157
+    Warning (13040): bidirectional pin "SRAM_D[12]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 157
+    Warning (13040): bidirectional pin "SRAM_D[13]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 157
+    Warning (13040): bidirectional pin "SRAM_D[14]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 157
+    Warning (13040): bidirectional pin "SRAM_D[15]" has no driver File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 157
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ADC_CONVST" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 41
+    Warning (13410): Pin "ADC_SCK" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 42
+    Warning (13410): Pin "ADC_SDI" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 43
+    Warning (13410): Pin "AUD_DACDAT" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 50
+    Warning (13410): Pin "AUD_XCK" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 52
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 83
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 83
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 83
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 83
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 83
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 83
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 83
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 86
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 86
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 86
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 86
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 86
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 86
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 86
+    Warning (13410): Pin "HDMI_TX_CLK" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 92
+    Warning (13410): Pin "HDMI_TX_D[0]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[1]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[2]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[3]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[4]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[5]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[6]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[7]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[8]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[9]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[10]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[11]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[12]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[13]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[14]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[15]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[16]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[17]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[18]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[19]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[20]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[21]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[22]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_D[23]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 93
+    Warning (13410): Pin "HDMI_TX_DE" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 94
+    Warning (13410): Pin "HDMI_TX_HS" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 95
+    Warning (13410): Pin "HDMI_TX_VS" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 97
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 100
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 100
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 100
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 100
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 100
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 100
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 100
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 103
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 103
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 103
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 103
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 103
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 103
+    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 103
+    Warning (13410): Pin "HSMC_CLKOUT0" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 110
+    Warning (13410): Pin "HSMC_CLKOUT_n[1]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 111
+    Warning (13410): Pin "HSMC_CLKOUT_n[2]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 111
+    Warning (13410): Pin "HSMC_CLKOUT_p[1]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 112
+    Warning (13410): Pin "HSMC_CLKOUT_p[2]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 112
+    Warning (13410): Pin "I2C_SCL" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 125
+    Warning (13410): Pin "LEDG[5]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 132
+    Warning (13410): Pin "LEDG[6]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 132
+    Warning (13410): Pin "LEDG[7]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 132
+    Warning (13410): Pin "SD_CLK" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 144
+    Warning (13410): Pin "SRAM_A[0]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+    Warning (13410): Pin "SRAM_A[1]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+    Warning (13410): Pin "SRAM_A[2]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+    Warning (13410): Pin "SRAM_A[3]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+    Warning (13410): Pin "SRAM_A[4]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+    Warning (13410): Pin "SRAM_A[5]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+    Warning (13410): Pin "SRAM_A[6]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+    Warning (13410): Pin "SRAM_A[7]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+    Warning (13410): Pin "SRAM_A[8]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+    Warning (13410): Pin "SRAM_A[9]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+    Warning (13410): Pin "SRAM_A[10]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+    Warning (13410): Pin "SRAM_A[11]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+    Warning (13410): Pin "SRAM_A[12]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+    Warning (13410): Pin "SRAM_A[13]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+    Warning (13410): Pin "SRAM_A[14]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+    Warning (13410): Pin "SRAM_A[15]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+    Warning (13410): Pin "SRAM_A[16]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+    Warning (13410): Pin "SRAM_A[17]" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 155
+    Warning (13410): Pin "SRAM_CE_n" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 156
+    Warning (13410): Pin "SRAM_LB_n" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 158
+    Warning (13410): Pin "SRAM_OE_n" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 159
+    Warning (13410): Pin "SRAM_UB_n" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 160
+    Warning (13410): Pin "SRAM_WE_n" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 161
+    Warning (13410): Pin "UART_TX" is stuck at GND File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 171
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 27 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ADC_SDO" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 44
+    Warning (15610): No output dependent on input pin "AUD_ADCDAT" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 47
+    Warning (15610): No output dependent on input pin "CLOCK_125_p" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 55
+    Warning (15610): No output dependent on input pin "CLOCK_50_B5B" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 56
+    Warning (15610): No output dependent on input pin "CLOCK_50_B6A" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 57
+    Warning (15610): No output dependent on input pin "CLOCK_50_B7A" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 58
+    Warning (15610): No output dependent on input pin "CLOCK_50_B8A" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 59
+    Warning (15610): No output dependent on input pin "CPU_RESET_n" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 62
+    Warning (15610): No output dependent on input pin "HDMI_TX_INT" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 96
+    Warning (15610): No output dependent on input pin "HSMC_CLKIN0" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 107
+    Warning (15610): No output dependent on input pin "HSMC_CLKIN_n[1]" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 108
+    Warning (15610): No output dependent on input pin "HSMC_CLKIN_n[2]" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 108
+    Warning (15610): No output dependent on input pin "HSMC_CLKIN_p[1]" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 109
+    Warning (15610): No output dependent on input pin "HSMC_CLKIN_p[2]" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 109
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 129
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 129
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 129
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 129
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 164
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 164
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 164
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 164
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 164
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 164
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 164
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 164
+    Warning (15610): No output dependent on input pin "UART_RX" File: C:/Users/admin/Desktop/Quartus/baseline_c5gx.v Line: 167
+Info (21057): Implemented 2608 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 29 input pins
+    Info (21059): Implemented 110 output pins
+    Info (21060): Implemented 97 bidirectional pins
+    Info (21061): Implemented 2308 logic cells
+    Info (21064): Implemented 64 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 255 warnings
+    Info: Peak virtual memory: 4852 megabytes
+    Info: Processing ended: Wed Jul 02 13:04:36 2025
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:35
+
+

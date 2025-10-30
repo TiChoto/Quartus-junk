@@ -1,0 +1,26 @@
+|test_fpga
+a => a.IN3
+b => b.IN3
+y_and <= and_gate:and_inst.y
+y_or <= or_gate:or_inst.y
+y_xor <= xor_gate:xor_inst.y
+
+
+|test_fpga|and_gate:and_inst
+a => y.IN0
+b => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_fpga|or_gate:or_inst
+a => y.IN0
+b => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_fpga|xor_gate:xor_inst
+a => y.IN0
+b => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+

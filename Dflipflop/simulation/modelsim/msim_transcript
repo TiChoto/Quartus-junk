@@ -1,0 +1,45 @@
+# Reading pref.tcl
+# do Dflipflop_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Dflipflop {C:/Users/admin/Desktop/Quartus/Dflipflop/dflipflop.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:23:22 on Apr 03,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/Dflipflop" C:/Users/admin/Desktop/Quartus/Dflipflop/dflipflop.v 
+# -- Compiling module dflipflop
+# 
+# Top level modules:
+# 	dflipflop
+# End time: 22:23:23 on Apr 03,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Dflipflop {C:/Users/admin/Desktop/Quartus/Dflipflop/dflipflop_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:23:23 on Apr 03,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/Dflipflop" C:/Users/admin/Desktop/Quartus/Dflipflop/dflipflop_tb.v 
+# -- Compiling module dflipflop_tb
+# 
+# Top level modules:
+# 	dflipflop_tb
+# End time: 22:23:23 on Apr 03,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.dflipflop work.dflipflop_tb
+# vsim work.dflipflop work.dflipflop_tb 
+# Start time: 22:23:33 on Apr 03,2025
+# Loading work.dflipflop
+# Loading work.dflipflop_tb
+add wave -position insertpoint sim:/dflipflop/*
+add wave -position insertpoint sim:/dflipflop_tb/*
+run
+# Time, D, Q, AsyncRst, SyncRst)                   00010
+run
+# End time: 22:28:38 on Apr 03,2025, Elapsed time: 0:05:05
+# Errors: 0, Warnings: 0

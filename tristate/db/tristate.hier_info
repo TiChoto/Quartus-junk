@@ -1,0 +1,9 @@
+|tristatebuffertb
+
+
+|tristatebuffertb|tristatebuffer:inst
+in => out.DATAIN
+enable => out.OE
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+

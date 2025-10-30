@@ -1,0 +1,45 @@
+# Reading pref.tcl
+# do eregisterfile_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/eregisterfile {C:/Users/admin/Desktop/Quartus/eregisterfile/eregisterfile.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:35:55 on Apr 22,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/eregisterfile" C:/Users/admin/Desktop/Quartus/eregisterfile/eregisterfile.v 
+# -- Compiling module eregisterfile
+# 
+# Top level modules:
+# 	eregisterfile
+# End time: 16:35:55 on Apr 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/eregisterfile {C:/Users/admin/Desktop/Quartus/eregisterfile/eregister_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:35:55 on Apr 22,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/eregisterfile" C:/Users/admin/Desktop/Quartus/eregisterfile/eregister_tb.v 
+# -- Compiling module eregister_tb
+# 
+# Top level modules:
+# 	eregister_tb
+# End time: 16:35:55 on Apr 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.eregister_tb
+# vsim work.eregister_tb 
+# Start time: 16:36:03 on Apr 22,2025
+# Loading work.eregister_tb
+# Loading work.eregisterfile
+add wave -position insertpoint sim:/eregister_tb/*
+run
+# ** Note: $stop    : C:/Users/admin/Desktop/Quartus/eregisterfile/eregister_tb.v(47)
+#    Time: 60 ns  Iteration: 0  Instance: /eregister_tb
+# Break in Module eregister_tb at C:/Users/admin/Desktop/Quartus/eregisterfile/eregister_tb.v line 47
+# End time: 16:36:54 on Apr 22,2025, Elapsed time: 0:00:51
+# Errors: 0, Warnings: 0

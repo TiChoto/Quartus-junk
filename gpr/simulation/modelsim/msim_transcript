@@ -1,0 +1,45 @@
+# Reading pref.tcl
+# do gpr_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/gpr {C:/Users/admin/Desktop/Quartus/gpr/gpr.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:51:58 on Apr 26,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/gpr" C:/Users/admin/Desktop/Quartus/gpr/gpr.v 
+# -- Compiling module gpr
+# 
+# Top level modules:
+# 	gpr
+# End time: 16:51:59 on Apr 26,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/gpr {C:/Users/admin/Desktop/Quartus/gpr/gpr_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:51:59 on Apr 26,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/gpr" C:/Users/admin/Desktop/Quartus/gpr/gpr_tb.v 
+# -- Compiling module gpr_tb
+# 
+# Top level modules:
+# 	gpr_tb
+# End time: 16:51:59 on Apr 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.gpr_tb
+# vsim work.gpr_tb 
+# Start time: 16:53:11 on Apr 26,2025
+# Loading work.gpr_tb
+# Loading work.gpr
+add wave -position insertpoint sim:/gpr_tb/*
+run
+# ** Note: $stop    : C:/Users/admin/Desktop/Quartus/gpr/gpr_tb.v(59)
+#    Time: 70 ns  Iteration: 0  Instance: /gpr_tb
+# Break in Module gpr_tb at C:/Users/admin/Desktop/Quartus/gpr/gpr_tb.v line 59
+# End time: 16:53:55 on Apr 26,2025, Elapsed time: 0:00:44
+# Errors: 0, Warnings: 0

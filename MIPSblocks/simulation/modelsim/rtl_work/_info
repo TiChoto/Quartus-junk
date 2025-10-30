@@ -1,0 +1,107 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/admin/Desktop/Quartus/MIPSblocks/simulation/modelsim
+valubranch
+Z1 !s110 1745337450
+!i10b 1
+!s100 E>JX0mEg5W?=;mF:4UVMN0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Id>AJLmzZ`^gj88dno6TTD0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1745326562
+8C:/Users/admin/Desktop/Quartus/alu/alubranch.v
+FC:/Users/admin/Desktop/Quartus/alu/alubranch.v
+!i122 1
+L0 1 30
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1745337450.000000
+!s107 C:/Users/admin/Desktop/Quartus/alu/alubranch.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/alu|C:/Users/admin/Desktop/Quartus/alu/alubranch.v|
+!i113 1
+Z6 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/alu
+Z7 tCvgOpt 0
+vcontrolunit
+R1
+!i10b 1
+!s100 4[<>H^eggd8BERSFna?ZL2
+R2
+I9bQa`[I0@ih4L3=<eEc673
+R3
+R0
+w1745335837
+8C:/Users/admin/Desktop/Quartus/controlunit/controlunit.v
+FC:/Users/admin/Desktop/Quartus/controlunit/controlunit.v
+!i122 0
+L0 1 47
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/admin/Desktop/Quartus/controlunit/controlunit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/controlunit|C:/Users/admin/Desktop/Quartus/controlunit/controlunit.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/controlunit
+R7
+veregisterfile
+R1
+!i10b 1
+!s100 <[OO@KK;aDEhR5ZPR<]kP2
+R2
+Ikh8;6zaM?;>k<2JcL72821
+R3
+R0
+w1745324760
+8C:/Users/admin/Desktop/Quartus/eregisterfile/eregisterfile.v
+FC:/Users/admin/Desktop/Quartus/eregisterfile/eregisterfile.v
+!i122 2
+L0 1 20
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/admin/Desktop/Quartus/eregisterfile/eregisterfile.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/eregisterfile|C:/Users/admin/Desktop/Quartus/eregisterfile/eregisterfile.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/eregisterfile
+R7
+vinstructionflow_tb
+!s110 1745337451
+!i10b 1
+!s100 d1knibj2c`I7R[XLbAg^Z3
+R2
+I5^jk7@_U>3FfATI=Q[UZ_1
+R3
+R0
+w1745337031
+8C:/Users/admin/Desktop/Quartus/MIPSblocks/instructionflow_tb.v
+FC:/Users/admin/Desktop/Quartus/MIPSblocks/instructionflow_tb.v
+!i122 3
+L0 2 60
+R4
+r1
+!s85 0
+31
+!s108 1745337451.000000
+!s107 C:/Users/admin/Desktop/Quartus/MIPSblocks/instructionflow_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/MIPSblocks|C:/Users/admin/Desktop/Quartus/MIPSblocks/instructionflow_tb.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/MIPSblocks
+R7

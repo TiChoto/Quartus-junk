@@ -1,0 +1,9 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/admin/Desktop/Quartus/tristate/tristatebuffertb.v
+source_file = 1, C:/Users/admin/Desktop/Quartus/tristate/tristatebufferfpga.v
+source_file = 1, C:/Users/admin/Desktop/Quartus/tristate/db/tristate.cbx.xml
+design_name = tristatebufferfpga
+instance = comp, \out~output , out~output, tristatebufferfpga, 1
+instance = comp, \in~input , in~input, tristatebufferfpga, 1
+instance = comp, \enable~input , enable~input, tristatebufferfpga, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, tristatebufferfpga, 1

@@ -1,0 +1,57 @@
+reg clk;
+reg reset;
+wire [31:0] aluresout;
+wire [31:0] shift_resultout;
+wire [31:0] GP_DATA_INout;
+// Instantiate the processor
+top_mips inst (
+ .clk(clk),
+ .reset(reset),
+ .aluresout(aluresout),
+ .shift_resultout(shift_resultout),
+ .GP_DATA_INout(GP_DATA_INout)
+);
+// Clock generation: 10ns period
+always #5 clk = ~clk;
+// Initial block for simulation
+initial begin
+ // Initialize signals
+ clk = 0;
+ reset = 1;
+ // Waveform dump (expanded)
+ $dumpfile("mips_processor.vcd");
+ $dumpvars(0, testbench);
+ // Dump internal signals from `uut` (processor instance)
+ $dumpvars(1, uut.PC);
+ $dumpvars(1, uut.next_PC);
+ $dumpvars(1, uut.instruction);
+ $dumpvars(1, uut.portA_data);
+ $dumpvars(1, uut.portB_data);
+ $dumpvars(1, uut.GP_data_in);
+ $dumpvars(1, uut.memory_data_out);
+ $dumpvars(1, uut.branch_taken);
+ $dumpvars(1, uut.CAD_delayed);
+ $dumpvars(1, uut.E_delayed);
+ $dumpvars(1, uut.GP_WE_delayed);
+ // Reset duration
+ #20 reset = 0;
+ // Simulation runtime (e.g., 1000 ns)
+ #1000;
+ $display("\nSimulation completed!");
+ $finish;
+end
+// Text monitoring (optional)
+always @(posedge clk) begin
+ if (!reset) begin
+ $display("Cycle: time=%0t | PC=%h | Inst=%h | ALU=%h |
+Shift=%h | GPin=%h",
+ $time,
+ uut.PC,
+ uut.instruction,
+ aluresout,
+ shift_resultout,
+ GP_DATA_INout
+ );
+ end
+end
+endmodule

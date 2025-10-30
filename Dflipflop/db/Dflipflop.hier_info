@@ -1,0 +1,11 @@
+|dflipflop_tb
+
+
+|dflipflop_tb|dflipflop:inst
+clk => Q~reg0.CLK
+rst_async => Q~reg0.ACLR
+rst_sync => Q.OUTPUTSELECT
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

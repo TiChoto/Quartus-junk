@@ -1,0 +1,68 @@
+# Reading pref.tcl
+# do dffdifferent_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/dffdifferent {C:/Users/admin/Desktop/Quartus/dffdifferent/dff_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:28:57 on Apr 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/dffdifferent" C:/Users/admin/Desktop/Quartus/dffdifferent/dff_tb.v 
+# -- Compiling module dff_tb
+# 
+# Top level modules:
+# 	dff_tb
+# End time: 23:28:57 on Apr 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/dffdifferent {C:/Users/admin/Desktop/Quartus/dffdifferent/dff_structural.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:28:57 on Apr 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/dffdifferent" C:/Users/admin/Desktop/Quartus/dffdifferent/dff_structural.v 
+# -- Compiling module dff_structural
+# 
+# Top level modules:
+# 	dff_structural
+# End time: 23:28:57 on Apr 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/dffdifferent {C:/Users/admin/Desktop/Quartus/dffdifferent/dff_behavioral.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:28:57 on Apr 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/dffdifferent" C:/Users/admin/Desktop/Quartus/dffdifferent/dff_behavioral.v 
+# -- Compiling module dff_behavioral
+# 
+# Top level modules:
+# 	dff_behavioral
+# End time: 23:28:57 on Apr 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.dff_tb
+# vsim work.dff_tb 
+# Start time: 23:29:03 on Apr 04,2025
+# Loading work.dff_tb
+# Loading work.dff_structural
+# Loading work.dff_behavioral
+add wave -position insertpoint sim:/dff_tb/*
+run
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/dff_tb/*
+run
+run
+vcd file dff_waves.vcd
+# ** UI-Msg: (vsim-3400) The default VCD output file "dff_waves.vcd" is already opened. Use the 'vcd files' command to create multiple VCD files.
+# 
+vcd add -r /*
+# ** UI-Msg (suppressible): (vsim-VCD-3452) 'vcd add' call is too late. The VCD header is already created.
+add wave -position insertpoint sim:/dff_tb/*
+run
+# ** Note: $finish    : C:/Users/admin/Desktop/Quartus/dffdifferent/dff_tb.v(42)
+#    Time: 160 ns  Iteration: 0  Instance: /dff_tb
+# 1
+# Break in Module dff_tb at C:/Users/admin/Desktop/Quartus/dffdifferent/dff_tb.v line 42
+# End time: 23:33:03 on Apr 04,2025, Elapsed time: 0:04:00
+# Errors: 0, Warnings: 0

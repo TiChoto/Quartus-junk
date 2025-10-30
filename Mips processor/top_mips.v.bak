@@ -1,0 +1,65 @@
+module top_mips (
+    input clk,
+    input reset,
+    output [31:0] aluresout,
+    output [31:0] shift_resultout,
+    output [31:0] GP_DATA_INout
+);
+    //Internal PC and instruction wires
+    reg [31:0] pc_reg;
+    wire [31:0] pc_plus4 = pc_reg + 4;
+    wire [31:0] pc = pc_reg;
+    wire [31:0] inst;
+
+    MEMORY instr_mem ( //rom
+        .clk(clk),
+        .MemWrite(0),
+        .MemRead(1),
+        .Address(pc),
+        .WriteData(32'b0),
+        .ReadData(inst)
+    );
+    //Decode fields
+    wire [4:0] RS = inst[25:21];
+    wire [4:0] RT = inst[20:16];
+    wire [4:0] RD = inst[15:11];
+    wire [15:0] IMM = inst[15:0];
+    wire [25:0] JINDEX = inst[25:0];
+
+    // Control Signals from decoder
+    wire GP_WE, ALU_SRC, U, MemRead, MemWrite;
+    wire [3:0] ALU_OP, GP_MUX_SEL, PC_MUX_SEL;
+    wire [1:0] SHIFT_OP;
+    wire [3:0] BCE_OP;
+
+    InstructionDecoder decoder (
+        .inst(inst),
+        .GP_WE(GP_WE),
+        .ALU_SRC(ALU_SRC),
+        .U(U),
+        .MemRead(MemRead),
+        .MemWrite(MemWrite),
+        .ALU_OP(ALU_OP),
+        .GP_MUX_SEL(GP_MUX_SEL),
+        .PC_MUX_SEL(PC_MUX_SEL),
+        .SHIFT_OP(SHIFT_OP),
+        .BCE_OP(BCE_OP)
+    );
+
+
+    wire [31:0] GP_OUT_A, GP_OUT_B;
+    wire [4:0] CAD, CAD_delayed;
+    wire [31:0] GP_DATA_IN, GP_DATA_IN_delayed;
+    wire GP_WE_delayed;
+
+    gpr regfile (
+        .clk(clk),
+        .Sw(GP_WE_delayed),
+        .Sin(GP_DATA_IN_delayed),
+        .Sa(RS),
+        .Sb(RT),
+        .Sc(CAD_delayed),
+        .Souta(GP_OUT_A),
+        .Soutb(GP_OUT_B)
+    );
+endmodule

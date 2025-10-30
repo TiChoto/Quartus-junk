@@ -1,0 +1,11 @@
+|muxdff_tb
+
+
+|muxdff_tb|mux_dff:dut
+clk => Q~reg0.CLK
+sel => mux_out.OUTPUTSELECT
+data0 => mux_out.DATAA
+data1 => mux_out.DATAB
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,66 @@
+# Reading pref.tcl
+# do jkflipflop_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/jkflipflop {C:/Users/admin/Desktop/Quartus/jkflipflop/jk_flipflop.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:37:04 on Apr 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/jkflipflop" C:/Users/admin/Desktop/Quartus/jkflipflop/jk_flipflop.v 
+# -- Compiling module jk_flipflop
+# 
+# Top level modules:
+# 	jk_flipflop
+# End time: 23:37:04 on Apr 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/jkflipflop {C:/Users/admin/Desktop/Quartus/jkflipflop/jk_flipflop_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:37:05 on Apr 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/jkflipflop" C:/Users/admin/Desktop/Quartus/jkflipflop/jk_flipflop_tb.v 
+# -- Compiling module jk_flipflop_tb
+# 
+# Top level modules:
+# 	jk_flipflop_tb
+# End time: 23:37:05 on Apr 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.jk_flipflop_tb
+# vsim work.jk_flipflop_tb 
+# Start time: 23:37:08 on Apr 04,2025
+# Loading work.jk_flipflop_tb
+# Loading work.jk_flipflop
+add wave -position insertpoint sim:/jk_flipflop_tb/*
+run
+# Time	Clk	Clear	Preset	J	K	Q	Q_n
+# 0	0	1	1	0	0	x	x
+# 5000	1	1	1	0	0	x	x
+# 10000	0	0	1	0	0	0	1
+# 15000	1	0	1	0	0	0	1
+# 20000	0	1	1	0	0	0	1
+# 25000	1	1	1	0	0	0	1
+# 30000	0	1	0	0	0	1	0
+# 35000	1	1	0	0	0	1	0
+# 40000	0	1	1	0	0	1	0
+# 45000	1	1	1	0	0	1	0
+# 50000	0	1	1	0	0	1	0
+# 55000	1	1	1	0	0	1	0
+# 60000	0	1	1	0	1	1	0
+# 65000	1	1	1	0	1	0	0
+# 70000	0	1	1	1	0	0	0
+# 75000	1	1	1	1	0	1	1
+# 80000	0	1	1	1	1	1	1
+# 85000	1	1	1	1	1	0	0
+# 90000	0	1	1	1	1	0	0
+# 95000	1	1	1	1	1	1	1
+# 100000	0	1	1	1	1	1	1
+# 120000	0	0	1	1	1	0	1
+# 130000	0	1	1	1	1	0	1
+# End time: 23:38:43 on Apr 04,2025, Elapsed time: 0:01:35
+# Errors: 0, Warnings: 0

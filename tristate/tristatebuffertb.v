@@ -1,0 +1,28 @@
+module tristatebuffertb;
+    reg in;              
+    reg enable;          
+    wire out;            
+
+
+    tristatebuffer inst (
+        .in(in),
+        .enable(enable),
+        .out(out)
+    );
+
+    initial begin
+        in = 1; enable = 1; #10; 
+        in = 0; enable = 1; #10; 
+        in = 1; enable = 0; #10; 
+        in = 0; enable = 0; #10; 
+        $finish; 
+    end
+endmodule
+
+module tristatebuffer (
+    input wire in,     
+    input wire enable,   
+    output wire out      
+);
+    assign out = enable ? in : 1'bZ; 
+endmodule

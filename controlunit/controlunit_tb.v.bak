@@ -1,0 +1,26 @@
+`timescale 1ns / 1ps
+module controlunit_tb;
+    reg [5:0] opcode;
+    wire RegDst, ALUsrc, Br, ZeroCheck;
+    wire [1:0] ALUop;
+
+    control_unit inst (
+        .opcode(opcode),
+        .RegDst(RegDst),
+        .ALUsrc(ALUsrc),
+        .Br(Br),
+        .ALUop(ALUop),
+        .ZeroCheck(ZeroCheck)
+    );
+
+    initial begin
+        opcode = 6'b000000; #20; //R-type
+        opcode = 6'b000100; #20; //beq
+        opcode = 6'b000101; #20; //bne
+        opcode = 6'b001000; #20; //addi
+        opcode = 6'b001100; #20; //andi
+        opcode = 6'b001101; #20; //ori
+        $stop; 
+    end
+endmodule
+

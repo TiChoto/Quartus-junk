@@ -1,0 +1,23 @@
+module alu_4bit (
+    input [2:0] A,          
+    input [3:0] B,        
+    input [2:0] opcode,     //table above
+    output reg [3:0] result
+);
+
+    //Carry
+    wire [4:0] add_result = A + B;
+    wire [4:0] sub_result = A - B;
+
+    always @(*) begin
+        case (opcode)
+            3'b000: result = add_result[3:0];           // ADD
+            3'b001: result = sub_result[3:0];           // SUB
+            3'b010: result = A & B;                     // AND
+            3'b011: result = A | B;                     // OR
+            3'b100: result = (sub_result[4]) ? 4'b1 : 4'b0; // SLT (signed)
+            default: result = 4'b0;                     // Undefined opcode
+        endcase
+    end
+
+endmodule

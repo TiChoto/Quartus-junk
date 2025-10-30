@@ -1,0 +1,23 @@
+module gpr(
+    input wire clk,
+    input wire Sw,
+    input wire [31:0] Sin,
+    input wire [4:0] Sa, Sb, Sc,
+    output wire [31:0] Souta, Soutb
+);
+
+    reg [31:0] registers [31:0]; // 32 registers, each 32 bits wide
+
+    // Write logic - synchronous
+    always @(posedge clk) begin
+        if (Sw && (Sc != 5'd0)) begin
+            registers[Sc] <= Sin;
+        end
+        registers[0] <= 32'b0; // Register 0 is always zero
+    end
+
+    // Read logic - combinational
+    assign Souta = (Sa == 5'd0) ? 32'b0 : registers[Sa];
+    assign Soutb = (Sb == 5'd0) ? 32'b0 : registers[Sb];
+
+endmodule

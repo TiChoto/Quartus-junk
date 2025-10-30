@@ -1,0 +1,366 @@
+Analysis & Elaboration report for mipsi
+Tue Jul 01 10:56:29 2025
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Parameter Settings for User Entity Instance: top_mips:uut|MEMORY:instr_mem
+  5. Parameter Settings for User Entity Instance: top_mips:uut|IE:imm_extender
+  6. Parameter Settings for User Entity Instance: top_mips:uut|ALU:alu_core|IE:extender
+  7. Parameter Settings for User Entity Instance: top_mips:uut|MEMORY:data_mem
+  8. Analysis & Elaboration Settings
+  9. Port Connectivity Checks: "top_mips:uut|gpr:regfile_read3"
+ 10. Port Connectivity Checks: "top_mips:uut|gpr:regfile_read12"
+ 11. Port Connectivity Checks: "top_mips:uut|ALU:alu_core"
+ 12. Port Connectivity Checks: "top_mips:uut|IE:imm_extender"
+ 13. Port Connectivity Checks: "top_mips:uut|InstructionDecoder:decoder"
+ 14. Port Connectivity Checks: "top_mips:uut|MEMORY:instr_mem"
+ 15. Port Connectivity Checks: "top_mips:uut"
+ 16. Analysis & Elaboration Messages
+ 17. Analysis & Elaboration Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Tue Jul 01 10:56:29 2025       ;
+; Quartus Prime Version         ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                 ; mipsi                                       ;
+; Top-level Entity Name         ; testbench                                   ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: top_mips:uut|MEMORY:instr_mem ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; MEM_SIZE       ; 256   ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: top_mips:uut|IE:imm_extender ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; N              ; 16    ; Signed Integer                                   ;
+; M              ; 32    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: top_mips:uut|ALU:alu_core|IE:extender ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                            ;
+; M              ; 32    ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: top_mips:uut|MEMORY:data_mem ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; MEM_SIZE       ; 256   ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                                           ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC5C6F27C7     ;                    ;
+; Top-level entity name                                                           ; testbench          ; mipsi              ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top_mips:uut|gpr:regfile_read3"                                                              ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Sw            ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Sin           ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Sa[1..0]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Sa[4..2]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Sb            ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Sc            ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Souta[31..10] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Soutb         ; Output ; Info     ; Explicitly unconnected                                                              ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top_mips:uut|gpr:regfile_read12"                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Sw            ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Sin           ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Sa[4..1]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Sa[0]         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Sb[4..2]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Sb[1]         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Sb[0]         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Sc            ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Souta[31..10] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Soutb[31..10] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top_mips:uut|ALU:alu_core"                                                            ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Zero   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Neg    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ovfalu ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top_mips:uut|IE:imm_extender"                                                              ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; out[31..30] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top_mips:uut|InstructionDecoder:decoder"                                              ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; BCE_OP ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top_mips:uut|MEMORY:instr_mem"                                                                                                                                                            ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; MemWrite     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; MemWrite[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; MemRead      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; MemRead[-1]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; WriteData    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top_mips:uut"                                                                                  ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; LEDR            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; aluresout       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; shift_resultout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; GP_DATA_INout   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; pc_output       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Tue Jul 01 10:56:18 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mipsi -c mipsi --analysis_and_elaboration
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 2 entities, in source file baseline_c5gx.v
+    Info (12023): Found entity 1: baseline_c5gx File: C:/Users/admin/Desktop/Quartus/Mips processor/baseline_c5gx.v Line: 38
+    Info (12023): Found entity 2: hex_display File: C:/Users/admin/Desktop/Quartus/Mips processor/baseline_c5gx.v Line: 203
+Info (12021): Found 1 design units, including 1 entities, in source file memory.v
+    Info (12023): Found entity 1: MEMORY File: C:/Users/admin/Desktop/Quartus/Mips processor/MEMORY.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file top_mips.v
+    Info (12023): Found entity 1: top_mips File: C:/Users/admin/Desktop/Quartus/Mips processor/top_mips.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testbench.v
+    Info (12023): Found entity 1: testbench File: C:/Users/admin/Desktop/Quartus/Mips processor/testbench.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file instructiondecoder.v
+    Info (12023): Found entity 1: InstructionDecoder File: C:/Users/admin/Desktop/Quartus/Mips processor/InstructionDecoder.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: ALU File: C:/Users/admin/Desktop/Quartus/Mips processor/ALU.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file gpr.v
+    Info (12023): Found entity 1: gpr File: C:/Users/admin/Desktop/Quartus/Mips processor/gpr.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ie.v
+    Info (12023): Found entity 1: IE File: C:/Users/admin/Desktop/Quartus/Mips processor/IE.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file shifter.v
+    Info (12023): Found entity 1: Shifter File: C:/Users/admin/Desktop/Quartus/Mips processor/Shifter.v Line: 1
+Info (12127): Elaborating entity "testbench" for the top level hierarchy
+Warning (10755): Verilog HDL warning at testbench.v(29): assignments to clk create a combinational loop File: C:/Users/admin/Desktop/Quartus/Mips processor/testbench.v Line: 29
+Info (10648): Verilog HDL Display System Task info at testbench.v(32): ==== MIPS Processor Simulation Start ==== File: C:/Users/admin/Desktop/Quartus/Mips processor/testbench.v Line: 32
+Warning (10175): Verilog HDL warning at testbench.v(33): ignoring unsupported system task File: C:/Users/admin/Desktop/Quartus/Mips processor/testbench.v Line: 33
+Warning (10175): Verilog HDL warning at testbench.v(34): ignoring unsupported system task File: C:/Users/admin/Desktop/Quartus/Mips processor/testbench.v Line: 34
+Info (10648): Verilog HDL Display System Task info at testbench.v(74): ==== Simulation Finished ==== File: C:/Users/admin/Desktop/Quartus/Mips processor/testbench.v Line: 74
+Warning (10175): Verilog HDL warning at testbench.v(75): ignoring unsupported system task File: C:/Users/admin/Desktop/Quartus/Mips processor/testbench.v Line: 75
+Info (12128): Elaborating entity "top_mips" for hierarchy "top_mips:uut" File: C:/Users/admin/Desktop/Quartus/Mips processor/testbench.v Line: 26
+Warning (10036): Verilog HDL or VHDL warning at top_mips.v(31): object "RD" assigned a value but never read File: C:/Users/admin/Desktop/Quartus/Mips processor/top_mips.v Line: 31
+Warning (10036): Verilog HDL or VHDL warning at top_mips.v(57): object "GP_WE_reg" assigned a value but never read File: C:/Users/admin/Desktop/Quartus/Mips processor/top_mips.v Line: 57
+Warning (10036): Verilog HDL or VHDL warning at top_mips.v(108): object "ALU_SRCB" assigned a value but never read File: C:/Users/admin/Desktop/Quartus/Mips processor/top_mips.v Line: 108
+Info (10264): Verilog HDL Case Statement information at top_mips.v(231): all case item expressions in this case statement are onehot File: C:/Users/admin/Desktop/Quartus/Mips processor/top_mips.v Line: 231
+Info (12128): Elaborating entity "MEMORY" for hierarchy "top_mips:uut|MEMORY:instr_mem" File: C:/Users/admin/Desktop/Quartus/Mips processor/top_mips.v Line: 27
+Warning (10850): Verilog HDL warning at MEMORY.v(13): number of words (5) in memory file does not match the number of elements in the address range [0:255] File: C:/Users/admin/Desktop/Quartus/Mips processor/MEMORY.v Line: 13
+Info (12128): Elaborating entity "InstructionDecoder" for hierarchy "top_mips:uut|InstructionDecoder:decoder" File: C:/Users/admin/Desktop/Quartus/Mips processor/top_mips.v Line: 52
+Info (12128): Elaborating entity "gpr" for hierarchy "top_mips:uut|gpr:regfile" File: C:/Users/admin/Desktop/Quartus/Mips processor/top_mips.v Line: 99
+Info (12128): Elaborating entity "IE" for hierarchy "top_mips:uut|IE:imm_extender" File: C:/Users/admin/Desktop/Quartus/Mips processor/top_mips.v Line: 106
+Info (12128): Elaborating entity "ALU" for hierarchy "top_mips:uut|ALU:alu_core" File: C:/Users/admin/Desktop/Quartus/Mips processor/top_mips.v Line: 124
+Info (12128): Elaborating entity "Shifter" for hierarchy "top_mips:uut|Shifter:shifter_unit" File: C:/Users/admin/Desktop/Quartus/Mips processor/top_mips.v Line: 132
+Warning (10240): Verilog HDL Always Construct warning at Shifter.v(12): inferring latch(es) for variable "Sntd", which holds its previous value in one or more paths through the always construct File: C:/Users/admin/Desktop/Quartus/Mips processor/Shifter.v Line: 12
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "clk" is missing source, defaulting to GND File: C:/Users/admin/Desktop/Quartus/Mips processor/testbench.v Line: 5
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (144001): Generated suppressed messages file C:/Users/admin/Desktop/Quartus/Mips processor/output_files/mipsi.map.smsg
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 4778 megabytes
+    Info: Processing ended: Tue Jul 01 10:56:29 2025
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:29
+
+
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in C:/Users/admin/Desktop/Quartus/Mips processor/output_files/mipsi.map.smsg.
+
+

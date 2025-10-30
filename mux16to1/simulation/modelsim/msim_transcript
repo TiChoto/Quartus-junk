@@ -1,0 +1,69 @@
+# Reading pref.tcl
+# do mux16to1_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/mux16to1 {C:/Users/admin/Desktop/Quartus/mux16to1/mux_16to1.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:18:07 on Mar 28,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/mux16to1" C:/Users/admin/Desktop/Quartus/mux16to1/mux_16to1.v 
+# -- Compiling module mux_16to1
+# 
+# Top level modules:
+# 	mux_16to1
+# End time: 23:18:07 on Mar 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/mux16to1 {C:/Users/admin/Desktop/Quartus/mux16to1/mux_16to1_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:18:07 on Mar 28,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/mux16to1" C:/Users/admin/Desktop/Quartus/mux16to1/mux_16to1_tb.v 
+# -- Compiling module mux_16to1_tb
+# 
+# Top level modules:
+# 	mux_16to1_tb
+# End time: 23:18:07 on Mar 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.mux_16to1_tb
+# vsim work.mux_16to1_tb 
+# Start time: 23:19:20 on Mar 28,2025
+# Loading work.mux_16to1_tb
+# Loading work.mux_16to1
+vsim work.mux_16to1_tb
+# End time: 23:19:39 on Mar 28,2025, Elapsed time: 0:00:19
+# Errors: 0, Warnings: 0
+# vsim work.mux_16to1_tb 
+# Start time: 23:19:39 on Mar 28,2025
+# Loading work.mux_16to1_tb
+# Loading work.mux_16to1
+add wave *
+run -all
+#  01
+#  10
+#  21
+#  31
+#  40
+#  50
+#  61
+#  71
+#  81
+#  91
+# 100
+# 111
+# 120
+# 131
+# 140
+# 151
+# ** Note: $finish    : C:/Users/admin/Desktop/Quartus/mux16to1/mux_16to1_tb.v(27)
+#    Time: 230 ns  Iteration: 0  Instance: /mux_16to1_tb
+# 1
+# Break in Module mux_16to1_tb at C:/Users/admin/Desktop/Quartus/mux16to1/mux_16to1_tb.v line 27
+# End time: 23:20:59 on Mar 28,2025, Elapsed time: 0:01:20
+# Errors: 0, Warnings: 0

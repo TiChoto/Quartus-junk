@@ -1,0 +1,67 @@
+# Reading pref.tcl
+# do MIPSblocks_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/controlunit {C:/Users/admin/Desktop/Quartus/controlunit/controlunit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:57:30 on Apr 22,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/controlunit" C:/Users/admin/Desktop/Quartus/controlunit/controlunit.v 
+# -- Compiling module controlunit
+# 
+# Top level modules:
+# 	controlunit
+# End time: 19:57:30 on Apr 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/alu {C:/Users/admin/Desktop/Quartus/alu/alubranch.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:57:30 on Apr 22,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/alu" C:/Users/admin/Desktop/Quartus/alu/alubranch.v 
+# -- Compiling module alubranch
+# 
+# Top level modules:
+# 	alubranch
+# End time: 19:57:30 on Apr 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/eregisterfile {C:/Users/admin/Desktop/Quartus/eregisterfile/eregisterfile.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:57:30 on Apr 22,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/eregisterfile" C:/Users/admin/Desktop/Quartus/eregisterfile/eregisterfile.v 
+# -- Compiling module eregisterfile
+# 
+# Top level modules:
+# 	eregisterfile
+# End time: 19:57:30 on Apr 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/MIPSblocks {C:/Users/admin/Desktop/Quartus/MIPSblocks/instructionflow_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:57:31 on Apr 22,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/MIPSblocks" C:/Users/admin/Desktop/Quartus/MIPSblocks/instructionflow_tb.v 
+# -- Compiling module instructionflow_tb
+# 
+# Top level modules:
+# 	instructionflow_tb
+# End time: 19:57:31 on Apr 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.instructionflow_tb
+# vsim work.instructionflow_tb 
+# Start time: 19:58:43 on Apr 22,2025
+# Loading work.instructionflow_tb
+# Loading work.eregisterfile
+# Loading work.alubranch
+# Loading work.controlunit
+add wave -position insertpoint sim:/instructionflow_tb/*
+run
+# ** Note: $stop    : C:/Users/admin/Desktop/Quartus/MIPSblocks/instructionflow_tb.v(59)
+#    Time: 70 ns  Iteration: 0  Instance: /instructionflow_tb
+# Break in Module instructionflow_tb at C:/Users/admin/Desktop/Quartus/MIPSblocks/instructionflow_tb.v line 59
+# End time: 20:02:33 on Apr 22,2025, Elapsed time: 0:03:50
+# Errors: 0, Warnings: 0

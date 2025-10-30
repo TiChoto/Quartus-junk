@@ -1,0 +1,24 @@
+|dff_tb
+
+
+|dff_tb|dff_structural:structural_dff
+clk => nand1.IN0
+clk => nand2.IN0
+clk => Q.IN0
+clk => nand5.IN0
+clk => nand6.IN0
+rst_async => Q.OUTPUTSELECT
+rst_sync => Q.IN1
+D => nand1.IN1
+D => nand2.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dff_tb|dff_behavioral:behavioral_dff
+clk => Q~reg0.CLK
+rst_async => Q~reg0.ACLR
+rst_sync => Q.OUTPUTSELECT
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,10 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/sequential_processor {C:/Users/admin/Desktop/sequential_processor/decoder_2to4.v}
+vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/sequential_processor {C:/Users/admin/Desktop/sequential_processor/tb_decoder_2to4.v}
+

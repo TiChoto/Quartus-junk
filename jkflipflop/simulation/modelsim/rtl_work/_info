@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/admin/Desktop/Quartus/jkflipflop/simulation/modelsim
+vjk_flipflop
+!s110 1743795424
+!i10b 1
+!s100 ]8Q:]VLA64z`[A1oL?aj90
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Ic5T>egDMUKc6?VW_H`FnC1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1743795286
+8C:/Users/admin/Desktop/Quartus/jkflipflop/jk_flipflop.v
+FC:/Users/admin/Desktop/Quartus/jkflipflop/jk_flipflop.v
+!i122 0
+L0 1 31
+Z3 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1743795424.000000
+!s107 C:/Users/admin/Desktop/Quartus/jkflipflop/jk_flipflop.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/jkflipflop|C:/Users/admin/Desktop/Quartus/jkflipflop/jk_flipflop.v|
+!i113 1
+Z4 o-vlog01compat -work work
+Z5 !s92 -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/jkflipflop
+Z6 tCvgOpt 0
+vjk_flipflop_tb
+!s110 1743795425
+!i10b 1
+!s100 Rd=ME6jdAVdBoai28:bB;0
+R1
+I`7MVnL5ShB=m0[ASKe3gV0
+R2
+R0
+w1743795331
+8C:/Users/admin/Desktop/Quartus/jkflipflop/jk_flipflop_tb.v
+FC:/Users/admin/Desktop/Quartus/jkflipflop/jk_flipflop_tb.v
+!i122 1
+L0 2 62
+R3
+r1
+!s85 0
+31
+!s108 1743795425.000000
+!s107 C:/Users/admin/Desktop/Quartus/jkflipflop/jk_flipflop_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/jkflipflop|C:/Users/admin/Desktop/Quartus/jkflipflop/jk_flipflop_tb.v|
+!i113 1
+R4
+R5
+R6

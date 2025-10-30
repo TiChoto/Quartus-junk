@@ -1,0 +1,61 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/admin/Desktop/Quartus/BCE/simulation/modelsim
+vBCE
+Z1 !s110 1749211075
+!i10b 1
+!s100 Ej=ShUQP]`E1HOYZj:n493
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IdF]i^5onS<Q_CN7Med0co0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1749210610
+8C:/Users/admin/Desktop/Quartus/BCE/BCE.v
+FC:/Users/admin/Desktop/Quartus/BCE/BCE.v
+!i122 0
+L0 1 18
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1749211075.000000
+!s107 C:/Users/admin/Desktop/Quartus/BCE/BCE.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/BCE|C:/Users/admin/Desktop/Quartus/BCE/BCE.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/BCE
+Z8 tCvgOpt 0
+n@b@c@e
+vBCE_tb
+R1
+!i10b 1
+!s100 ;JHKU?NUAQ:Hf_P0:m7Zf1
+R2
+I:^]i6V>jRJlGVNco14;O^0
+R3
+R0
+w1749210720
+8C:/Users/admin/Desktop/Quartus/BCE/BCE_tb.v
+FC:/Users/admin/Desktop/Quartus/BCE/BCE_tb.v
+!i122 1
+L0 2 17
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/admin/Desktop/Quartus/BCE/BCE_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/BCE|C:/Users/admin/Desktop/Quartus/BCE/BCE_tb.v|
+!i113 1
+R6
+R7
+R8
+n@b@c@e_tb

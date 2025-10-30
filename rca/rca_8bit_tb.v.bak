@@ -1,0 +1,80 @@
+`timescale 1ns/1ps
+module rca_8bit_tb;
+    reg [7:0] A;
+    reg [7:0] B;
+    reg Cin;
+    wire [7:0] Sum;
+    wire Cout;
+    
+    rca_8bit inst(
+        .A(A),
+        .B(B),
+        .Cin(Cin),
+        .Sum(Sum),
+        .Cout(Cout)
+    );
+    
+    initial begin
+        //All zeros
+        A = 8'h00; B = 8'h00; Cin = 0;
+        expected_sum = 8'h00; expected_cout = 0;
+        #10;
+        
+        //All ones, no carry-in
+        A = 8'hFF; B = 8'hFF; Cin = 0;
+        expected_sum = 8'hFE; expected_cout = 1;
+        #10;
+        
+        //All ones, carry-in
+        A = 8'hFF; B = 8'hFF; Cin = 1;
+        expected_sum = 8'hFF; expected_cout = 1;
+        #10;
+        
+        //Max overflow
+        A = 8'hFF; B = 8'h01; Cin = 0;
+        expected_sum = 8'h00; expected_cout = 1;
+        #10;
+        
+        //Random
+        A = 8'hAA; B = 8'h55; Cin = 0;
+        expected_sum = 8'hFF; expected_cout = 0;
+        #10;
+        
+        //Random
+        A = 8'h3C; B = 8'hC3; Cin = 0;
+        expected_sum = 8'hFF; expected_cout = 0;
+        #10;
+        
+        //Single bit addition with carry
+        A = 8'h01; B = 8'h01; Cin = 1;
+        expected_sum = 8'h03; expected_cout = 0;
+        #10;
+        
+        //Carry propagation
+        A = 8'h80; B = 8'h80; Cin = 0;
+        expected_sum = 8'h00; expected_cout = 1;
+        #10;
+        
+        //Alternate pattern 
+        A = 8'h55; B = 8'hAA; Cin = 1;
+        expected_sum = 8'h00; expected_cout = 1;
+        #10;
+        
+        //Boundary values
+        A = 8'h00; B = 8'hFF; Cin = 1;
+        expected_sum = 8'h00; expected_cout = 1;
+        #10;
+        
+        //Middle value
+        A = 8'h7F; B = 8'h7F; Cin = 1;
+        expected_sum = 8'hFF; expected_cout = 0;
+        #10;
+        
+        //Power of two - addition
+        A = 8'h04; B = 8'h04; Cin = 0;
+        expected_sum = 8'h08; expected_cout = 0;
+        #10;
+        
+        $stop;
+    end
+endmodule

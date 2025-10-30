@@ -1,0 +1,54 @@
+# Reading pref.tcl
+# do rca_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/rca {C:/Users/admin/Desktop/Quartus/rca/full_adder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:32:42 on May 22,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/rca" C:/Users/admin/Desktop/Quartus/rca/full_adder.v 
+# -- Compiling module full_adder
+# 
+# Top level modules:
+# 	full_adder
+# End time: 11:32:42 on May 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/rca {C:/Users/admin/Desktop/Quartus/rca/rca_8bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:32:43 on May 22,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/rca" C:/Users/admin/Desktop/Quartus/rca/rca_8bit.v 
+# -- Compiling module rca_8bit
+# 
+# Top level modules:
+# 	rca_8bit
+# End time: 11:32:43 on May 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/rca {C:/Users/admin/Desktop/Quartus/rca/rca_8bit_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:32:43 on May 22,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/rca" C:/Users/admin/Desktop/Quartus/rca/rca_8bit_tb.v 
+# -- Compiling module rca_8bit_tb
+# 
+# Top level modules:
+# 	rca_8bit_tb
+# End time: 11:32:43 on May 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.rca_8bit_tb
+# vsim work.rca_8bit_tb 
+# Start time: 11:32:53 on May 22,2025
+# Loading work.rca_8bit_tb
+# Loading work.rca_8bit
+# Loading work.full_adder
+add wave -position insertpoint sim:/rca_8bit_tb/*
+run
+# Test 0: A=00 B=00 Cin=0 => Sum=00 (expected 00) Cout=0 (expected 0) PASS
+# End time: 11:35:57 on May 22,2025, Elapsed time: 0:03:04
+# Errors: 0, Warnings: 0

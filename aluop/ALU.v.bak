@@ -1,0 +1,59 @@
+module ALU (
+    input [31:0] SrcA,      // Left operand
+    input [31:0] SrcB,      // Right operand or immediate
+    input [3:0] af,         // ALU control signal
+    input i,                // 1: I-type, 0: R-type
+    output reg [31:0] Alures, // ALU result
+    output reg Zero,        // Zero flag
+    output reg Neg,         // Negative flag
+    output reg ovfalu       // Overflow flag
+);
+
+    wire signed [31:0] A = SrcA;
+    wire signed [31:0] B = SrcB;
+
+    always @(*) begin
+        ovfalu = 0;
+        case (af)
+            4'b0000: begin // add
+                Alures = A + B;
+                if ((A[31] == B[31]) && (Alures[31] != A[31]))
+                    ovfalu = 1;
+            end
+            4'b0001: begin // addu (no overflow)
+                Alures = A + B;
+            end
+            4'b0010: begin // sub
+                Alures = A - B;
+                if ((A[31] != B[31]) && (Alures[31] != A[31]))
+                    ovfalu = 1;
+            end
+            4'b0011: begin // subu (no overflow)
+                Alures = A - B;
+            end
+            4'b0100: Alures = A & B; // and
+            4'b0101: Alures = A | B; // or
+            4'b0110: Alures = A ^ B; // xor
+            4'b0111: begin // special case
+                if (i) // for 'lui' (load upper immediate)
+                    Alures = {SrcB[15:0], 16'b0};
+                else
+                    Alures = A | B;
+            end
+            4'b1010: begin // slt (signed)
+                Alures = (A < B) ? 32'b1 : 32'b0;
+            end
+            4'b1011: begin // sltu (unsigned)
+                Alures = ($unsigned(SrcA) < $unsigned(SrcB)) ? 32'b1 : 32'b0;
+            end
+            default: Alures = 32'b0;
+        endcase
+
+        // Zero flag
+        Zero = (Alures == 32'b0) ? 1'b1 : 1'b0;
+
+        // Negative flag
+        Neg = (Alures[31] == 1'b1) ? 1'b1 : 1'b0;
+    end
+
+endmodule

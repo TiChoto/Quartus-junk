@@ -1,0 +1,60 @@
+# Reading pref.tcl
+# do encoder8to3_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/encoder8to3 {C:/Users/admin/Desktop/Quartus/encoder8to3/encoder_8to3.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:12:16 on Mar 28,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/encoder8to3" C:/Users/admin/Desktop/Quartus/encoder8to3/encoder_8to3.v 
+# -- Compiling module encoder_8to3
+# 
+# Top level modules:
+# 	encoder_8to3
+# End time: 23:12:16 on Mar 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/encoder8to3 {C:/Users/admin/Desktop/Quartus/encoder8to3/encoder_8to3_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:12:16 on Mar 28,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/encoder8to3" C:/Users/admin/Desktop/Quartus/encoder8to3/encoder_8to3_tb.v 
+# -- Compiling module encoder_8to3_tb
+# 
+# Top level modules:
+# 	encoder_8to3_tb
+# End time: 23:12:16 on Mar 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.encoder_8to3_tb
+# vsim work.encoder_8to3_tb 
+# Start time: 23:12:21 on Mar 28,2025
+# Loading work.encoder_8to3_tb
+# Loading work.encoder_8to3
+add wave -position insertpoint sim:/encoder_8to3_tb/*
+run
+# Paste insertion failed: restart: ** UI-Msg: (vish-4014) No objects found matching 'restart'.
+# Paste insertion failed: -f: Missing signal name or pattern.
+restart -f
+# Closing VCD file "encoder_wave.vcd"
+add wave -position insertpoint sim:/encoder_8to3_tb/*
+add wave -position insertpoint sim:/encoder_8to3_tb/dut/*
+# Paste insertion failed: run: ** UI-Msg: (vish-4014) No objects found matching 'run'.
+# Paste insertion failed: -all: Missing signal name or pattern.
+run -all
+# ** Note: $finish    : C:/Users/admin/Desktop/Quartus/encoder8to3/encoder_8to3_tb.v(29)
+#    Time: 110 ns  Iteration: 0  Instance: /encoder_8to3_tb
+# 1
+# Break in Module encoder_8to3_tb at C:/Users/admin/Desktop/Quartus/encoder8to3/encoder_8to3_tb.v line 29
+# Paste insertion failed: wave: ** UI-Msg: (vish-4014) No objects found matching 'wave'.
+# Paste insertion failed: zoom: ** UI-Msg: (vish-4014) No objects found matching 'zoom'.
+# Paste insertion failed: full: ** UI-Msg: (vish-4014) No objects found matching 'full'.
+wave zoom full
+# {0 ps} {115500 ps}
+# End time: 23:14:38 on Mar 28,2025, Elapsed time: 0:02:17
+# Errors: 0, Warnings: 0

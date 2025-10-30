@@ -1,0 +1,107 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/admin/Desktop/Quartus/Latch/simulation/modelsim
+vlatch_free_alu
+!s110 1749658181
+!i10b 1
+!s100 jCWlB4[=ka?Q]:?bLUVmX0
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I=5KJ:^0l12THK:5zKm4D>3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1749657853
+Z4 8C:/Users/admin/Desktop/Quartus/Latch/latch_free_alu.v
+Z5 FC:/Users/admin/Desktop/Quartus/Latch/latch_free_alu.v
+!i122 0
+L0 1 138
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1749658181.000000
+Z8 !s107 C:/Users/admin/Desktop/Quartus/Latch/latch_free_alu.v|
+Z9 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/Latch|C:/Users/admin/Desktop/Quartus/Latch/latch_free_alu.v|
+!i113 1
+Z10 o-vlog01compat -work work
+Z11 !s92 -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Latch
+Z12 tCvgOpt 0
+vlatch_free_bce
+Z13 !s110 1749658182
+!i10b 1
+!s100 F71mDdc8F;5T86c_<6=Gd3
+R1
+IWJ7eJUJ?;l33lJZ0Za=@[0
+R2
+R0
+R3
+R4
+R5
+!i122 0
+L0 141 25
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vlatch_free_i_decoder
+R13
+!i10b 1
+!s100 7B9V5^4@>@@HK1oZMXWNC2
+R1
+I8B]C>^<C@8l`B>KYWN7c:0
+R2
+R0
+R3
+R4
+R5
+!i122 0
+L0 168 52
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vlatch_free_testbench
+R13
+!i10b 1
+!s100 BT210<PKP`]n7n>^RiIR^1
+R1
+I_@;>RM7YNkQ4SSZQIjbN[2
+R2
+R0
+w1749658085
+8C:/Users/admin/Desktop/Quartus/Latch/latch_free_testbench.v
+FC:/Users/admin/Desktop/Quartus/Latch/latch_free_testbench.v
+!i122 1
+L0 2 231
+R6
+r1
+!s85 0
+31
+!s108 1749658182.000000
+!s107 C:/Users/admin/Desktop/Quartus/Latch/latch_free_testbench.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/Latch|C:/Users/admin/Desktop/Quartus/Latch/latch_free_testbench.v|
+!i113 1
+R10
+R11
+R12

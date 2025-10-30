@@ -1,0 +1,57 @@
+# Reading pref.tcl
+# do ieu_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/IEU {C:/Users/admin/Desktop/Quartus/IEU/ImmediateExtensionUnit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:00:49 on Jun 11,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/IEU" C:/Users/admin/Desktop/Quartus/IEU/ImmediateExtensionUnit.v 
+# -- Compiling module ImmediateExtensionUnit
+# 
+# Top level modules:
+# 	ImmediateExtensionUnit
+# End time: 20:00:49 on Jun 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/IEU {C:/Users/admin/Desktop/Quartus/IEU/ImmediateExtensionUnit_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:00:49 on Jun 11,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/IEU" C:/Users/admin/Desktop/Quartus/IEU/ImmediateExtensionUnit_tb.v 
+# -- Compiling module ImmediateExtensionUnit_tb
+# 
+# Top level modules:
+# 	ImmediateExtensionUnit_tb
+# End time: 20:00:49 on Jun 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.ImmediateExtensionUnit_tb
+# vsim work.ImmediateExtensionUnit_tb 
+# Start time: 20:01:07 on Jun 11,2025
+# Loading work.ImmediateExtensionUnit_tb
+# Loading work.ImmediateExtensionUnit
+add wave -position insertpoint sim:/ImmediateExtensionUnit_tb/*
+run
+# Testing sign extension:
+# Input: 7fff, Output: 00007fff (Expected: 00007FFF)
+# Input: 8000, Output: ffff8000 (Expected: FFFF8000)
+# 
+# Testing zero extension:
+# Input: 7fff, Output: 00007fff (Expected: 00007FFF)
+# Input: 8000, Output: 00008000 (Expected: 00008000)
+# 
+# Testing parameterized extension (12 to 26 bits):
+# Sign extended: 0000800 (Expected: 3FF800)
+# Zero extended: 0000800 (Expected: 000800)
+# ** Note: $finish    : C:/Users/admin/Desktop/Quartus/IEU/ImmediateExtensionUnit_tb.v(59)
+#    Time: 60 ns  Iteration: 0  Instance: /ImmediateExtensionUnit_tb
+# 1
+# Break in Module ImmediateExtensionUnit_tb at C:/Users/admin/Desktop/Quartus/IEU/ImmediateExtensionUnit_tb.v line 59
+# End time: 20:02:21 on Jun 11,2025, Elapsed time: 0:01:14
+# Errors: 0, Warnings: 0

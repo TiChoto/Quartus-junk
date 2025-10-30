@@ -1,0 +1,83 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/admin/Desktop/Quartus/rca/simulation/modelsim
+vfull_adder
+!s110 1747899162
+!i10b 1
+!s100 ^R[7AE5MO7o^5=GD=DCTV2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Ig1clf;RklQh2O9BEdP][h1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1747221004
+8C:/Users/admin/Desktop/Quartus/rca/full_adder.v
+FC:/Users/admin/Desktop/Quartus/rca/full_adder.v
+!i122 0
+L0 1 10
+Z3 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1747899162.000000
+!s107 C:/Users/admin/Desktop/Quartus/rca/full_adder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/rca|C:/Users/admin/Desktop/Quartus/rca/full_adder.v|
+!i113 1
+Z4 o-vlog01compat -work work
+Z5 !s92 -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/rca
+Z6 tCvgOpt 0
+vrca_8bit
+Z7 !s110 1747899163
+!i10b 1
+!s100 UUGN[6eA6`Lo?=Y0cK0AY2
+R1
+IUAbAC[C_Hn_K^FXZ7aX1_1
+R2
+R0
+w1747221101
+8C:/Users/admin/Desktop/Quartus/rca/rca_8bit.v
+FC:/Users/admin/Desktop/Quartus/rca/rca_8bit.v
+!i122 1
+L0 1 20
+R3
+r1
+!s85 0
+31
+Z8 !s108 1747899163.000000
+!s107 C:/Users/admin/Desktop/Quartus/rca/rca_8bit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/rca|C:/Users/admin/Desktop/Quartus/rca/rca_8bit.v|
+!i113 1
+R4
+R5
+R6
+vrca_8bit_tb
+R7
+!i10b 1
+!s100 c[?O91PSDikPQfI59@2U`3
+R1
+I>D5U]7`5]0V1=mEdCA5mX2
+R2
+R0
+w1747222285
+8C:/Users/admin/Desktop/Quartus/rca/rca_8bit_tb.v
+FC:/Users/admin/Desktop/Quartus/rca/rca_8bit_tb.v
+!i122 2
+L0 2 59
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/admin/Desktop/Quartus/rca/rca_8bit_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/admin/Desktop/Quartus/rca|C:/Users/admin/Desktop/Quartus/rca/rca_8bit_tb.v|
+!i113 1
+R4
+R5
+R6

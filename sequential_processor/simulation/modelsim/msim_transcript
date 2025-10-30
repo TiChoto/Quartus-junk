@@ -1,0 +1,56 @@
+# Reading pref.tcl
+# do sequential_processor_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/sequential_processor {C:/Users/admin/Desktop/sequential_processor/d_flipflop.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:44:32 on Apr 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/sequential_processor" C:/Users/admin/Desktop/sequential_processor/d_flipflop.v 
+# -- Compiling module d_flipflop
+# 
+# Top level modules:
+# 	d_flipflop
+# End time: 15:44:32 on Apr 10,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/sequential_processor {C:/Users/admin/Desktop/sequential_processor/shift_register.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:44:33 on Apr 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/sequential_processor" C:/Users/admin/Desktop/sequential_processor/shift_register.v 
+# -- Compiling module shift_register
+# 
+# Top level modules:
+# 	shift_register
+# End time: 15:44:33 on Apr 10,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/sequential_processor {C:/Users/admin/Desktop/sequential_processor/tb_shiftregister.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:44:34 on Apr 10,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/sequential_processor" C:/Users/admin/Desktop/sequential_processor/tb_shiftregister.v 
+# -- Compiling module tb_shiftregister
+# 
+# Top level modules:
+# 	tb_shiftregister
+# End time: 15:44:34 on Apr 10,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.tb_shiftregister
+# vsim work.tb_shiftregister 
+# Start time: 15:44:41 on Apr 10,2025
+# Loading work.tb_shiftregister
+# Loading work.shift_register
+# Loading work.d_flipflop
+add wave -position insertpoint sim:/tb_shiftregister/*
+run
+# ** Note: $finish    : C:/Users/admin/Desktop/sequential_processor/tb_shiftregister.v(44)
+#    Time: 160 ns  Iteration: 0  Instance: /tb_shiftregister
+# 1
+# Break in Module tb_shiftregister at C:/Users/admin/Desktop/sequential_processor/tb_shiftregister.v line 44
+# WARNING: No extended dataflow license exists

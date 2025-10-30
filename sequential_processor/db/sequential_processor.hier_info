@@ -1,0 +1,56 @@
+|tb_shiftregister
+
+
+|tb_shiftregister|shift_register:inst
+clk => clk.IN4
+rst => rst.IN4
+load => d_in.OUTPUTSELECT
+load => d_in.OUTPUTSELECT
+load => d_in.OUTPUTSELECT
+load => d_in.OUTPUTSELECT
+dir => d_in.OUTPUTSELECT
+dir => d_in.OUTPUTSELECT
+dir => d_in.OUTPUTSELECT
+dir => d_in.OUTPUTSELECT
+dir => serial_out.OUTPUTSELECT
+serial_in => d_in.DATAB
+serial_in => d_in.DATAA
+parallel_in[0] => d_in.DATAB
+parallel_in[1] => d_in.DATAB
+parallel_in[2] => d_in.DATAB
+parallel_in[3] => d_in.DATAB
+parallel_out[0] <= d_flipflop:ff0.q
+parallel_out[1] <= d_flipflop:ff1.q
+parallel_out[2] <= d_flipflop:ff2.q
+parallel_out[3] <= d_flipflop:ff3.q
+serial_out <= serial_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|tb_shiftregister|shift_register:inst|d_flipflop:ff0
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|tb_shiftregister|shift_register:inst|d_flipflop:ff1
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|tb_shiftregister|shift_register:inst|d_flipflop:ff2
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|tb_shiftregister|shift_register:inst|d_flipflop:ff3
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

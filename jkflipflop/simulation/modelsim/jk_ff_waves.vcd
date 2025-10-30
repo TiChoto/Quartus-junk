@@ -1,0 +1,160 @@
+$date
+	Fri Apr 04 23:37:19 2025
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module jk_flipflop_tb $end
+$var reg 1 ! clk $end
+$var reg 1 " clear_n $end
+$var reg 1 # preset_n $end
+$var reg 1 $ J $end
+$var reg 1 % K $end
+$var wire 1 & Q $end
+$var wire 1 ' Q_n $end
+
+$scope module dut $end
+$var wire 1 ( clk $end
+$var wire 1 ) clear_n $end
+$var wire 1 * preset_n $end
+$var wire 1 + J $end
+$var wire 1 , K $end
+$var reg 1 - Q $end
+$var reg 1 . Q_n $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+1"
+1#
+0$
+0%
+x-
+x.
+x&
+x'
+0,
+0+
+1*
+1)
+0(
+$end
+#5000
+1!
+1(
+#10000
+0"
+0!
+0)
+0(
+0-
+1.
+0&
+1'
+#15000
+1!
+1(
+#20000
+1"
+0!
+1)
+0(
+#25000
+1!
+1(
+#30000
+0#
+0!
+0*
+0(
+1-
+0.
+1&
+0'
+#35000
+1!
+1(
+#40000
+1#
+0!
+1*
+0(
+#45000
+1!
+1(
+#50000
+0!
+0(
+#55000
+1!
+1(
+#60000
+1%
+0!
+1,
+0(
+#65000
+1!
+1(
+0-
+0&
+#70000
+1$
+0%
+0!
+1+
+0,
+0(
+#75000
+1!
+1(
+1-
+1.
+1&
+1'
+#80000
+1%
+0!
+1,
+0(
+#85000
+1!
+1(
+0-
+0.
+0&
+0'
+#90000
+0!
+0(
+#95000
+1!
+1(
+1-
+1.
+1&
+1'
+#100000
+0!
+0(
+#120000
+0"
+0)
+0-
+0&
+#130000
+1"
+1)
+#140000
+0#
+0*
+1-
+0.
+1&
+0'

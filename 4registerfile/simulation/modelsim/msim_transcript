@@ -1,0 +1,46 @@
+# Reading pref.tcl
+# do 4registerfile_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/4registerfile {C:/Users/admin/Desktop/Quartus/4registerfile/reg4bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:49:05 on Apr 17,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/4registerfile" C:/Users/admin/Desktop/Quartus/4registerfile/reg4bit.v 
+# -- Compiling module reg4bit
+# 
+# Top level modules:
+# 	reg4bit
+# End time: 11:49:05 on Apr 17,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/4registerfile {C:/Users/admin/Desktop/Quartus/4registerfile/tbreg4bit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:49:05 on Apr 17,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/4registerfile" C:/Users/admin/Desktop/Quartus/4registerfile/tbreg4bit.v 
+# -- Compiling module tbreg4bit
+# 
+# Top level modules:
+# 	tbreg4bit
+# End time: 11:49:05 on Apr 17,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.tbreg4bit
+# vsim work.tbreg4bit 
+# Start time: 11:49:35 on Apr 17,2025
+# Loading work.tbreg4bit
+# Loading work.reg4bit
+add wave -position insertpoint sim:/tbreg4bit/*
+run
+# ** Note: $finish    : C:/Users/admin/Desktop/Quartus/4registerfile/tbreg4bit.v(40)
+#    Time: 120 ns  Iteration: 0  Instance: /tbreg4bit
+# 1
+# Break in Module tbreg4bit at C:/Users/admin/Desktop/Quartus/4registerfile/tbreg4bit.v line 40
+# End time: 11:52:16 on Apr 17,2025, Elapsed time: 0:02:41
+# Errors: 0, Warnings: 0

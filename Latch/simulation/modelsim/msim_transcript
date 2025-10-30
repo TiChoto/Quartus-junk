@@ -1,0 +1,80 @@
+# Reading pref.tcl
+# do Latch_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Latch {C:/Users/admin/Desktop/Quartus/Latch/latch_free_alu.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:09:41 on Jun 11,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/Latch" C:/Users/admin/Desktop/Quartus/Latch/latch_free_alu.v 
+# -- Compiling module latch_free_alu
+# -- Compiling module latch_free_bce
+# -- Compiling module latch_free_i_decoder
+# 
+# Top level modules:
+# 	latch_free_alu
+# 	latch_free_bce
+# 	latch_free_i_decoder
+# End time: 20:09:42 on Jun 11,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/Latch {C:/Users/admin/Desktop/Quartus/Latch/latch_free_testbench.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:09:42 on Jun 11,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/Latch" C:/Users/admin/Desktop/Quartus/Latch/latch_free_testbench.v 
+# -- Compiling module latch_free_testbench
+# 
+# Top level modules:
+# 	latch_free_testbench
+# End time: 20:09:42 on Jun 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.latch_free_testbench
+# vsim work.latch_free_testbench 
+# Start time: 20:09:47 on Jun 11,2025
+# Loading work.latch_free_testbench
+# Loading work.latch_free_alu
+# Loading work.latch_free_bce
+# Loading work.latch_free_i_decoder
+add wave -position insertpoint sim:/latch_free_testbench/*
+run
+# === Latch-Free Modules Testbench ===
+# 
+# --- ALU Tests ---
+# Testing ALU operations...
+# ADD:         15 +         25 =         40 (Expected: 40) PASS
+# SUB:         50 -         30 =         20 (Expected: 20) PASS
+# AND: f0f0f0f0 & 0f0f0f0f = 00000000 (Expected: 00000000) PASS
+# OR: f0f0f0f0 | 0f0f0f0f = ffffffff (Expected: FFFFFFFF) PASS
+# Zero Flag Test:          0 +          0 =          0, Zero = 1 PASS
+# SLT:         10 <         20 =          1 (Expected: 1) PASS
+# Undefined operation test: Result = 00000000 PASS (Default case)
+# 
+# --- Branch Condition Evaluation Tests ---
+# Testing Branch Condition Evaluation...
+# BEQ:        100 ==        100 = 1 (Expected: 1) PASS
+# BNE:        100 !=        200 = 1 (Expected: 1) PASS
+# BLT:         50 <        100 = 1 (Expected: 1) PASS
+# BGE:        100 >=         50 = 1 (Expected: 1) PASS
+# Undefined branch type test: Result = 0 PASS (Default case)
+# 
+# --- Instruction Decoder Tests ---
+# Testing Instruction Decoder...
+# R-type: opcode=000000, rs= 2, rt= 3, rd= 1, shamt= 0, funct=100000 PASS
+# I-type: opcode=001000, rs= 2, rt= 1, immediate= 1999 PASS
+# J-type: opcode=000010, jump_address=0040000 FAIL
+# Unknown instruction: All fields should be 0 except opcode PASS (Default case)
+# 
+# === All Tests Complete ===
+# ** Note: $finish    : C:/Users/admin/Desktop/Quartus/Latch/latch_free_testbench.v(64)
+#    Time: 320 ns  Iteration: 0  Instance: /latch_free_testbench
+# 1
+# Break in Module latch_free_testbench at C:/Users/admin/Desktop/Quartus/Latch/latch_free_testbench.v line 64
+# End time: 20:10:40 on Jun 11,2025, Elapsed time: 0:00:53
+# Errors: 0, Warnings: 0

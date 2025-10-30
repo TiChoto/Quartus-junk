@@ -1,0 +1,87 @@
+module gpr_tb;
+
+    // Declare signals
+    reg clk;
+    reg Sw;
+    reg [31:0] Sin;
+    reg [4:0] Sa, Sb, Sc;
+    wire [31:0] Souta, Soutb;
+
+    // Instantiate GPR
+    gpr uut (
+        .clk(clk),
+        .Sw(Sw),
+        .Sin(Sin),
+        .Sa(Sa),
+        .Sb(Sb),
+        .Sc(Sc),
+        .Souta(Souta),
+        .Soutb(Soutb)
+    );
+
+    // Clock generation: 10ns period
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk;
+    end
+
+    // Stimulus
+    initial begin
+        // Initial values
+        Sw = 0; Sin = 0; Sa = 0; Sb = 0; Sc = 0;
+        
+        #10;
+        
+        // Write 32'hA5A5A5A5 into register 5
+        Sin = 32'hA5A5A5A5;
+        Sc = 5'd5;
+        Sw = 1;
+        #10; // wait for clk ↑
+        Sw = 0;
+        
+        // Read from register 5 into Souta
+        Sa = 5'd5;
+        Sb = 5'd0;
+        #10;
+        
+        // Write 32'hDEADBEEF into register 10
+        Sin = 32'hDEADBEEF;
+        Sc = 5'd10;
+        Sw = 1;
+        #10;
+        Sw = 0;
+        
+        // Read from register 10 into Soutb
+        Sa = 5'd0;
+        Sb = 5'd10;
+        #10;
+        
+        // Attempt to write into register 0 (should not happen)
+        Sin = 32'hFFFFFFFF;
+        Sc = 5'd0;
+        Sw = 1;
+        #10;
+        Sw = 0;
+        
+        // Read from register 0 (should still be 0)
+        Sa = 5'd0;
+        Sb = 5'd0;
+        #10;
+
+        // Multiple interactions
+        Sin = 32'hCAFEBABE;
+        Sc = 5'd15;
+        Sw = 1;
+        #10;
+        Sw = 0;
+        
+        Sa = 5'd15;
+        Sb = 5'd5;
+        #10;
+
+        // End simulation
+        #20;
+        $stop;
+    end
+
+endmodule

@@ -1,0 +1,54 @@
+# Reading pref.tcl
+# do Idecoder_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/ldecoder {C:/Users/admin/Desktop/Quartus/ldecoder/instruction_decoder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:49:15 on Jun 29,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/ldecoder" C:/Users/admin/Desktop/Quartus/ldecoder/instruction_decoder.v 
+# -- Compiling module instruction_decoder
+# 
+# Top level modules:
+# 	instruction_decoder
+# End time: 12:49:15 on Jun 29,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/admin/Desktop/Quartus/ldecoder {C:/Users/admin/Desktop/Quartus/ldecoder/tb_instruction_decoder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:49:16 on Jun 29,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/admin/Desktop/Quartus/ldecoder" C:/Users/admin/Desktop/Quartus/ldecoder/tb_instruction_decoder.v 
+# -- Compiling module tb_instruction_decoder
+# 
+# Top level modules:
+# 	tb_instruction_decoder
+# End time: 12:49:16 on Jun 29,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.tb_instruction_decoder
+# vsim work.tb_instruction_decoder 
+# Start time: 12:49:20 on Jun 29,2025
+# Loading work.tb_instruction_decoder
+# Loading work.instruction_decoder
+add wave -position insertpoint sim:/tb_instruction_decoder/*
+run
+# === Starting Testbench ===
+# Time=0 | Instr=002081b3 | ALU_OP=0001 | RegWrite=1 | MemRead=0 | MemWrite=0 | Branch=0
+# Time=10000 | Instr=0040a183 | ALU_OP=0010 | RegWrite=1 | MemRead=1 | MemWrite=0 | Branch=0
+# Time=20000 | Instr=0030a223 | ALU_OP=0010 | RegWrite=0 | MemRead=0 | MemWrite=1 | Branch=0
+# Time=30000 | Instr=00110063 | ALU_OP=0011 | RegWrite=0 | MemRead=0 | MemWrite=0 | Branch=1
+# Time=40000 | Instr=000011b7 | ALU_OP=0100 | RegWrite=1 | MemRead=0 | MemWrite=0 | Branch=0
+# Time=50000 | Instr=001001ef | ALU_OP=0101 | RegWrite=1 | MemRead=0 | MemWrite=0 | Branch=0
+# Time=60000 | Instr=0000007f | ALU_OP=0000 | RegWrite=0 | MemRead=0 | MemWrite=0 | Branch=0
+# ** Note: $finish    : C:/Users/admin/Desktop/Quartus/ldecoder/tb_instruction_decoder.v(53)
+#    Time: 70 ns  Iteration: 0  Instance: /tb_instruction_decoder
+# 1
+# Break in Module tb_instruction_decoder at C:/Users/admin/Desktop/Quartus/ldecoder/tb_instruction_decoder.v line 53
+# End time: 12:49:43 on Jun 29,2025, Elapsed time: 0:00:23
+# Errors: 0, Warnings: 0
