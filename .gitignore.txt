@@ -1,0 +1,14 @@
+db/
+incremental_db/
+output_files/
+*.sof
+*.pof
+*.jdi
+*.sld
+*.qpf
+*.qws
+*.qws.bak
+*.rpt
+*.vho
+*.qsm
+*.qdb
